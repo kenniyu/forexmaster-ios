@@ -7,7 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PositionsViewController" customModule="ForexMaster" customModuleProvider="target">
             <connections>
+                <outlet property="adBannerTopConstraint" destination="sfI-98-fJj" id="lHc-5A-ikB"/>
+                <outlet property="bannerView" destination="9jd-ca-q7H" id="UXG-qo-qyp"/>
+                <outlet property="spinner" destination="Xqv-MW-uv9" id="Ov0-Xh-yTY"/>
                 <outlet property="tableView" destination="zWk-Ib-R5h" id="oOO-UZ-CZt"/>
+                <outlet property="tableViewTopConstraint" destination="Z6r-pC-YkU" id="0Xi-dV-REU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,13 +28,41 @@
                         <outlet property="delegate" destination="-1" id="J2M-0G-MHx"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2v-6f-8XM">
+                    <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jd-ca-q7H" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5y5-fw-Mvu"/>
+                        <constraint firstAttribute="width" constant="320" id="nzG-pb-7K5"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="nzG-pb-7K5"/>
+                        </mask>
+                    </variation>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xqv-MW-uv9">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="zWk-Ib-R5h" secondAttribute="trailing" id="3HV-UY-PXx"/>
+                <constraint firstAttribute="trailing" secondItem="9jd-ca-q7H" secondAttribute="trailing" id="925-Jr-GrE"/>
+                <constraint firstItem="Xqv-MW-uv9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EVd-Dl-gvk"/>
                 <constraint firstItem="zWk-Ib-R5h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XrN-9T-mkj"/>
                 <constraint firstItem="zWk-Ib-R5h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z6r-pC-YkU"/>
+                <constraint firstItem="u2v-6f-8XM" firstAttribute="bottom" secondItem="9jd-ca-q7H" secondAttribute="bottom" id="eq1-AC-7oH"/>
+                <constraint firstItem="u2v-6f-8XM" firstAttribute="leading" secondItem="9jd-ca-q7H" secondAttribute="leading" id="fc7-eq-shl"/>
+                <constraint firstItem="u2v-6f-8XM" firstAttribute="trailing" secondItem="9jd-ca-q7H" secondAttribute="trailing" id="fpW-7K-UCd"/>
+                <constraint firstItem="u2v-6f-8XM" firstAttribute="top" secondItem="9jd-ca-q7H" secondAttribute="top" id="lzz-t7-ZWb"/>
+                <constraint firstItem="Xqv-MW-uv9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mM6-o1-TzH"/>
+                <constraint firstItem="9jd-ca-q7H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="sfI-98-fJj"/>
                 <constraint firstAttribute="bottom" secondItem="zWk-Ib-R5h" secondAttribute="bottom" id="xVu-w5-3g2"/>
+                <constraint firstItem="9jd-ca-q7H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z7d-oP-Hr7"/>
             </constraints>
         </view>
     </objects>

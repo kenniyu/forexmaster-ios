@@ -7,6 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="ForexMaster" customModuleProvider="target">
             <connections>
+                <outlet property="adBannerTopConstraint" destination="rXq-Am-jhC" id="xBn-aO-1HI"/>
+                <outlet property="bannerView" destination="Nde-PE-j1v" id="Iya-G3-lJA"/>
+                <outlet property="spinner" destination="8Rf-dF-U5i" id="PPz-6m-s4F"/>
+                <outlet property="tableView" destination="6fI-5Q-ekP" id="1C2-Kn-N6n"/>
+                <outlet property="tableViewTopConstraint" destination="xj8-Uz-9uh" id="w8f-K4-VrI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,10 +28,33 @@
                         <outlet property="delegate" destination="-1" id="4Ui-wQ-uQf"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxa-Ck-VKk">
+                    <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-PE-j1v" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ryO-aC-AuC"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-dF-U5i">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Kxa-Ck-VKk" firstAttribute="leading" secondItem="Nde-PE-j1v" secondAttribute="leading" id="4S6-6G-EEF"/>
+                <constraint firstItem="8Rf-dF-U5i" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9v0-zC-O8Z"/>
+                <constraint firstItem="Kxa-Ck-VKk" firstAttribute="top" secondItem="Nde-PE-j1v" secondAttribute="top" id="Fbn-Ph-YhV"/>
+                <constraint firstItem="8Rf-dF-U5i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Stf-4n-4fV"/>
                 <constraint firstItem="6fI-5Q-ekP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e2U-lc-Jl4"/>
+                <constraint firstAttribute="trailing" secondItem="Nde-PE-j1v" secondAttribute="trailing" id="hjR-mJ-6T1"/>
+                <constraint firstItem="Kxa-Ck-VKk" firstAttribute="trailing" secondItem="Nde-PE-j1v" secondAttribute="trailing" id="qLK-Pw-dVW"/>
+                <constraint firstItem="Nde-PE-j1v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="rXq-Am-jhC"/>
+                <constraint firstItem="Kxa-Ck-VKk" firstAttribute="bottom" secondItem="Nde-PE-j1v" secondAttribute="bottom" id="vFb-hQ-4Zy"/>
+                <constraint firstItem="Nde-PE-j1v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wgi-WF-WaJ"/>
                 <constraint firstAttribute="bottom" secondItem="6fI-5Q-ekP" secondAttribute="bottom" id="xdO-0h-GmG"/>
                 <constraint firstItem="6fI-5Q-ekP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xj8-Uz-9uh"/>
                 <constraint firstAttribute="trailing" secondItem="6fI-5Q-ekP" secondAttribute="trailing" id="z8C-cY-9XY"/>

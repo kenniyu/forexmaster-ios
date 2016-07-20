@@ -7,5 +7,8 @@ target 'ForexMaster' do
   pod 'SDWebImage'
   pod 'Alamofire', '~> 3.0'
   pod 'ObjectMapper', '~> 1.1'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 end
+
 

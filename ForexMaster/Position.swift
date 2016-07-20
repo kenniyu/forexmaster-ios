@@ -12,7 +12,7 @@ import ObjectMapper
 public class Position: Mappable {
     var pair: String!
     var size: Int!
-    var costBasis: Double!
+    var costBasis: String!
     
     required public init?(_ map: Map) {
         

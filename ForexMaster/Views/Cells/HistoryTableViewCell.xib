@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="KGk-i7-Jjw" customClass="HistoryTableViewCell" customModule="ForexMaster" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkO-vw-zbo">
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="69.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMs-C6-zo5">
+                                <rect key="frame" x="20" y="8" width="332" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muv-BC-b9q">
+                                <rect key="frame" x="20" y="40.5" width="332" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="muv-BC-b9q" firstAttribute="trailing" secondItem="mMs-C6-zo5" secondAttribute="trailing" id="2LS-8h-teV"/>
+                            <constraint firstAttribute="trailing" secondItem="mMs-C6-zo5" secondAttribute="trailing" constant="20" id="4Qm-jp-kZq"/>
+                            <constraint firstAttribute="bottom" secondItem="mMs-C6-zo5" secondAttribute="bottom" id="4d0-UC-trg"/>
+                            <constraint firstItem="mMs-C6-zo5" firstAttribute="leading" secondItem="vkO-vw-zbo" secondAttribute="leading" constant="20" id="GFK-gD-yQH"/>
+                            <constraint firstItem="muv-BC-b9q" firstAttribute="leading" secondItem="mMs-C6-zo5" secondAttribute="leading" id="Ran-0W-J0E"/>
+                            <constraint firstItem="mMs-C6-zo5" firstAttribute="top" secondItem="vkO-vw-zbo" secondAttribute="top" constant="8" id="d6p-gZ-ZoG"/>
+                            <constraint firstItem="muv-BC-b9q" firstAttribute="top" secondItem="mMs-C6-zo5" secondAttribute="bottom" id="jDp-DT-jg7"/>
+                            <constraint firstAttribute="bottom" secondItem="muv-BC-b9q" secondAttribute="bottom" constant="8" id="wOV-S9-jH6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4d0-UC-trg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vkO-vw-zbo" secondAttribute="bottom" id="BKi-c1-8Ru"/>
+                    <constraint firstAttribute="trailing" secondItem="vkO-vw-zbo" secondAttribute="trailing" id="Gzw-Cb-mnA"/>
+                    <constraint firstItem="vkO-vw-zbo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nGr-7S-VSK"/>
+                    <constraint firstItem="vkO-vw-zbo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zQm-li-t0B"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="vkO-vw-zbo" id="YUq-dB-G70"/>
+                <outlet property="dateLabel" destination="muv-BC-b9q" id="xBa-bo-nsa"/>
+                <outlet property="tradeLabel" destination="mMs-C6-zo5" id="MOi-RG-HLL"/>
+            </connections>
+            <point key="canvasLocation" x="434" y="352"/>
+        </tableViewCell>
+    </objects>
+</document>
