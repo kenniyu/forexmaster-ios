@@ -15,7 +15,7 @@ public struct ExperimentManagerKeys {
 // Singleton
 public class ExperimentManager {
     static let sharedInstance = ExperimentManager()
-    public var showAds: Bool = false
+    public var showAds: Bool = true
     
     private init() {
         
