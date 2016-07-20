@@ -33,7 +33,6 @@ public class PositionsViewController: BaseViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setupAd()
         fetchTrades()
     }
     
@@ -64,6 +63,7 @@ public class PositionsViewController: BaseViewController {
         super.viewDidLoad()
         
         registerCells()
+        setupAd()
     }
     
     public func fetchTrades() {

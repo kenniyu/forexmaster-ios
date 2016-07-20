@@ -31,9 +31,9 @@ public class HistoryViewController: BaseViewController {
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
+    
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setupAd()
         fetchTrades()
     }
     
@@ -43,6 +43,7 @@ public class HistoryViewController: BaseViewController {
             bannerView.rootViewController = self
             
             let request = GADRequest()
+            request.contentURL = "http://www.forexfactory.com/"
             request.testDevices = [kDFPSimulatorID, "ffe7748b1c0b67e1e502538e4e814a4228f5a25f"]
             bannerView.loadRequest(request)
         } else {
@@ -64,6 +65,7 @@ public class HistoryViewController: BaseViewController {
         super.viewDidLoad()
         
         registerCells()
+        setupAd()
     }
     
     public func fetchTrades() {

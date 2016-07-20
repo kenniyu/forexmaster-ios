@@ -60,7 +60,7 @@ public class HistoryTableViewCell: UITableViewCell {
     public func getTradeDate(viewModel: HistoryTableViewCellModel) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "EEE, MMMM dd, yyyy at HH:mm:ss zzz"
+        dateFormatter.dateFormat = "EEE, MMMM dd 'at' hh:mm:ss a zzz"
         let dateString = dateFormatter.stringFromDate(viewModel.trade.date)
         return dateString
     }
