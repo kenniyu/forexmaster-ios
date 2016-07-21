@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase
         FIRApp.configure()
 
+        // Push notifications
+        registerForPushNotifications(application)
+        
         return true
     }
     
@@ -88,6 +92,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        application.applicationIconBadgeNumber = 0
+        if let pushToken = NSUserDefaults.standardUserDefaults().objectForKey("pushToken") as? String {
+            let baseUrl = NetworkManager.sharedInstance.baseUrl
+            let url = "\(baseUrl)/clear_badge_count/\(pushToken).json"
+            
+            let request = Alamofire.request(.POST, url, parameters: nil, encoding: .JSON)
+            request.responseJSON { (response) in
+                print(response)
+            }
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -97,7 +111,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        // What if the user declines the permissions?
+        // When the user accepts or declines your permissions or has already made that selection in the past, this gets called
+        if notificationSettings.types != .None {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        // Set push token
+        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "pushToken")
+        
+        print("Device Token:", tokenString)
+        let baseUrl = NetworkManager.sharedInstance.baseUrl
+        let url = "\(baseUrl)/register_token/\(tokenString).json"
 
-
+        let request = Alamofire.request(.POST, url, parameters: nil, encoding: .JSON)
+        request.responseJSON { (response) in
+            print(response)
+        }
+    }
 }
 

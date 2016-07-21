@@ -68,7 +68,8 @@ public class PositionsViewController: BaseViewController {
     
     public func fetchTrades() {
         // Do any additional setup after loading the view.
-        let request = Alamofire.request(.GET, "https://fast-forest-93779.herokuapp.com/trades.json", parameters: nil, encoding: .JSON, headers: nil)
+        let baseUrl = NetworkManager.sharedInstance.baseUrl
+        let request = Alamofire.request(.GET, "\(baseUrl)/trades.json", parameters: nil, encoding: .JSON, headers: nil)
         spinner.startAnimating()
         request.responseJSON { [weak self] response in
             guard let strongSelf = self else { return }

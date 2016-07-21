@@ -69,8 +69,9 @@ public class HistoryViewController: BaseViewController {
     }
     
     public func fetchTrades() {
+        let baseUrl = NetworkManager.sharedInstance.baseUrl
         // Do any additional setup after loading the view.
-        let request = Alamofire.request(.GET, "https://fast-forest-93779.herokuapp.com/trades_history.json", parameters: nil, encoding: .JSON, headers: nil)
+        let request = Alamofire.request(.GET, "\(baseUrl)/trades_history.json", parameters: nil, encoding: .JSON, headers: nil)
         spinner.startAnimating()
         request.responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
