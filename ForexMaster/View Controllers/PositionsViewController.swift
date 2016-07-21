@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import ObjectMapper
 import GoogleMobileAds
+import SWXMLHash
 
 public class PositionsViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +20,7 @@ public class PositionsViewController: BaseViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     public var positionsData: [Position] = []
+    public var quotesData: [String: String] = [:]
     
     public override var navBarTitle: String {
         get {
@@ -34,6 +36,7 @@ public class PositionsViewController: BaseViewController {
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         fetchTrades()
+        fetchQuotes()
     }
     
     public func setupAd() {
@@ -97,7 +100,54 @@ public class PositionsViewController: BaseViewController {
                 positionsData.append(position)
             }
         }
+        
+        // Now that we have all positions, make query to fetch all quotes
+        fetchQuotes()
         tableView.reloadData()
+    }
+    
+    public func updateQuotes() {
+        // Update quote value in positions, and then reloads the table
+        for position in positionsData {
+            let pair = position.pair
+            if let quote = quotesData[pair] {
+                position.quote = quote
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    public func fetchQuotes() {
+        let pairs = positionsData.map { (position) -> String in
+            return position.pair
+        }
+        
+        Alamofire.request(.GET, "https://rates.fxcm.com/RatesXML", parameters: nil).response { [weak self] (request, response, data, error) in
+            guard let strongSelf = self else { return }
+            if let data = data {
+                let xml = SWXMLHash.parse(data)
+                
+                for pair in pairs {
+                    let pairString = pair.componentsSeparatedByString("/").joinWithSeparator("")
+                    do {
+                        let bid = try xml["Rates"]["Rate"].withAttr("Symbol", pairString)["Bid"].element?.text
+                        do {
+                            let ask = try xml["Rates"]["Rate"].withAttr("Symbol", pairString)["Ask"].element?.text
+                            
+                            if let bid = bid, ask = ask, bidDouble = Double(bid), askDouble = Double(ask) {
+                                let mark = (bidDouble + askDouble)/2
+                                strongSelf.quotesData[pair] = String(mark)
+                            }
+                        } catch {
+                            print("WTF")
+                        }
+                    } catch {
+                        print("WTF")
+                    }
+                }
+            }
+            strongSelf.updateQuotes()
+        }
     }
 }
 

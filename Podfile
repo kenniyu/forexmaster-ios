@@ -9,6 +9,7 @@ target 'ForexMaster' do
   pod 'ObjectMapper', '~> 1.1'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'SWXMLHash', '~> 2.4.0'
 end
 
 

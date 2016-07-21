@@ -11,7 +11,7 @@ import UIKit
 public class PositionSectionHeaderView: UIView {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var pairLabel: UILabel!
-    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var costBasisLabel: UILabel!
     @IBOutlet weak var verticalBorderView: UIView!
     @IBOutlet weak var bottomBorderView: UIView!
@@ -58,11 +58,11 @@ public class PositionSectionHeaderView: UIView {
     
     public func setupStyles() {
         pairLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
-        sizeLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
+        markLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
         costBasisLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
         
         pairLabel.textColor = Styles.Colors.Black
-        sizeLabel.textColor = Styles.Colors.Black
+        markLabel.textColor = Styles.Colors.Black
         costBasisLabel.textColor = Styles.Colors.Black
         
         bottomBorderView.backgroundColor = Styles.Colors.Black.colorWithAlphaComponent(0.1)

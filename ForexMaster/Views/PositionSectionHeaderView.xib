@@ -9,8 +9,8 @@
             <connections>
                 <outlet property="bottomBorderView" destination="iny-il-yud" id="MeC-WC-0bd"/>
                 <outlet property="costBasisLabel" destination="10h-I6-Skq" id="4PA-14-jD8"/>
+                <outlet property="markLabel" destination="CBR-BN-NQY" id="QKv-PL-HUN"/>
                 <outlet property="pairLabel" destination="arI-8f-TFn" id="Xfg-Ix-XBx"/>
-                <outlet property="sizeLabel" destination="5af-Sn-mvc" id="AZt-GK-Efm"/>
                 <outlet property="verticalBorderView" destination="e2n-VK-dpl" id="NaW-Uk-scD"/>
                 <outlet property="view" destination="iN0-l3-epB" id="lz7-YC-d8C"/>
             </connections>
@@ -26,7 +26,7 @@
                         <constraint firstAttribute="width" constant="100" id="uQR-Bc-jCk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-VK-dpl">
@@ -37,9 +37,9 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost Basis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10h-I6-Skq">
-                    <rect key="frame" x="246.5" y="0.0" width="126.5" height="32"/>
+                    <rect key="frame" x="121" y="0.0" width="126" height="31"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iny-il-yud">
@@ -49,35 +49,43 @@
                         <constraint firstAttribute="height" constant="1" id="1bC-qx-bIO"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5af-Sn-mvc">
-                    <rect key="frame" x="120" y="0.0" width="126.5" height="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBR-BN-NQY">
+                    <rect key="frame" x="247" y="0.0" width="126" height="31"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="10h-I6-Skq" firstAttribute="width" secondItem="5af-Sn-mvc" secondAttribute="width" id="04e-Xg-e9R"/>
+                <constraint firstItem="CBR-BN-NQY" firstAttribute="width" secondItem="10h-I6-Skq" secondAttribute="width" id="0Tk-y4-2GG"/>
+                <constraint firstAttribute="trailing" secondItem="CBR-BN-NQY" secondAttribute="trailing" id="E86-jZ-H90"/>
                 <constraint firstAttribute="bottom" secondItem="e2n-VK-dpl" secondAttribute="bottom" id="EXs-m3-LoZ"/>
+                <constraint firstItem="iny-il-yud" firstAttribute="top" secondItem="CBR-BN-NQY" secondAttribute="bottom" id="FEz-QX-wxg"/>
                 <constraint firstAttribute="trailing" secondItem="10h-I6-Skq" secondAttribute="trailing" id="M06-e3-GIH"/>
                 <constraint firstAttribute="bottom" secondItem="iny-il-yud" secondAttribute="bottom" id="MEa-qe-Rkq"/>
                 <constraint firstItem="arI-8f-TFn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="QEP-1U-NRZ"/>
                 <constraint firstItem="e2n-VK-dpl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QV0-Wy-8Zf"/>
-                <constraint firstItem="10h-I6-Skq" firstAttribute="leading" secondItem="5af-Sn-mvc" secondAttribute="trailing" id="QyM-Jv-hiT"/>
                 <constraint firstAttribute="bottom" secondItem="arI-8f-TFn" secondAttribute="bottom" id="R2n-mg-29p"/>
                 <constraint firstItem="arI-8f-TFn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XwC-6d-OCR"/>
                 <constraint firstAttribute="bottom" secondItem="10h-I6-Skq" secondAttribute="bottom" id="b3x-xD-qRj"/>
                 <constraint firstItem="10h-I6-Skq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bgd-CA-6aF"/>
-                <constraint firstItem="5af-Sn-mvc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hBF-Z7-3K1"/>
+                <constraint firstItem="iny-il-yud" firstAttribute="top" secondItem="10h-I6-Skq" secondAttribute="bottom" id="d2b-3Z-10y"/>
+                <constraint firstItem="CBR-BN-NQY" firstAttribute="leading" secondItem="10h-I6-Skq" secondAttribute="trailing" id="ikq-fx-apw"/>
                 <constraint firstAttribute="trailing" secondItem="iny-il-yud" secondAttribute="trailing" id="jm1-sm-Hne"/>
                 <constraint firstItem="e2n-VK-dpl" firstAttribute="leading" secondItem="arI-8f-TFn" secondAttribute="trailing" id="kQY-8C-u4B"/>
-                <constraint firstItem="5af-Sn-mvc" firstAttribute="leading" secondItem="arI-8f-TFn" secondAttribute="trailing" id="p48-6D-8Mv"/>
+                <constraint firstItem="10h-I6-Skq" firstAttribute="leading" secondItem="e2n-VK-dpl" secondAttribute="trailing" id="wrN-jP-E3X"/>
                 <constraint firstItem="iny-il-yud" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x5i-YW-thU"/>
-                <constraint firstAttribute="bottom" secondItem="5af-Sn-mvc" secondAttribute="bottom" id="yDO-P1-gd4"/>
+                <constraint firstItem="CBR-BN-NQY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zZj-5S-V2L"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="284.5" y="54.5"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="M06-e3-GIH"/>
+                    <exclude reference="b3x-xD-qRj"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="284.5" y="54"/>
         </view>
     </objects>
 </document>

@@ -21,12 +21,13 @@ public class PositionTableViewCell: UITableViewCell {
     @IBOutlet weak var verticalBorderView: UIView!
     @IBOutlet weak var pairLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var costBasisLabel: UILabel!
     
     static let kNib = UINib(nibName: kClassName, bundle: NSBundle(forClass: PositionTableViewCell.self))
     static let kClassName = "PositionTableViewCell"
     static let kReuseIdentifier = "PositionTableViewCell"
-    static let kCellHeight: CGFloat = 50
+    static let kCellHeight: CGFloat = 65
     
     public class var nib: UINib {
         get {
@@ -61,6 +62,10 @@ public class PositionTableViewCell: UITableViewCell {
             sizeLabel.text = "\(viewModel.position.size)"
         }
         costBasisLabel.text = String(viewModel.position.costBasis)
+        
+        if let quote = viewModel.position.quote {
+            quoteLabel.text = quote
+        }
     }
     
     public func setupStyles() {
@@ -73,8 +78,10 @@ public class PositionTableViewCell: UITableViewCell {
         pairLabel.font = Styles.Fonts.avenirDemiBoldFontWithSize(16)
         pairLabel.textColor = Styles.Colors.Black
         
-        sizeLabel.font = Styles.Fonts.avenirRegularFontWithSize(16)
-        sizeLabel.textColor = Styles.Colors.Gray
+        sizeLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
+        
+        quoteLabel.font = Styles.Fonts.avenirRegularFontWithSize(16)
+        quoteLabel.textColor = Styles.Colors.Gray
         
         costBasisLabel.font = Styles.Fonts.avenirRegularFontWithSize(16)
         costBasisLabel.textColor = Styles.Colors.Gray
