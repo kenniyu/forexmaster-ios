@@ -10,13 +10,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ForexMaster/AppDelegate.swift"
-            timestampString = "490808236.982337"
+            timestampString = "490825279.749166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForexMaster/View Controllers/PositionsViewController.swift"
+            timestampString = "490824845.01804"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "pollQuotes()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ForexMaster.PositionsViewController.pollQuotes () -&gt; ()"
+                  moduleName = "ForexMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/View%20Controllers/PositionsViewController.swift"
+                  timestampString = "490824845.023473"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc ForexMaster.PositionsViewController.pollQuotes () -&gt; ()"
+                  moduleName = "ForexMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/View%20Controllers/PositionsViewController.swift"
+                  timestampString = "490824845.024032"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "10">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

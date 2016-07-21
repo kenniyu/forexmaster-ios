@@ -21,6 +21,7 @@ public class PositionsViewController: BaseViewController {
     
     public var positionsData: [Position] = []
     public var quotesData: [String: String] = [:]
+    public var quoteRefreshTimer: NSTimer? = nil
     
     public override var navBarTitle: String {
         get {
@@ -67,6 +68,15 @@ public class PositionsViewController: BaseViewController {
         
         registerCells()
         setupAd()
+        setupQuoteRefresh()
+    }
+    
+    public func setupQuoteRefresh() {
+        quoteRefreshTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: #selector(PositionsViewController.pollQuotes), userInfo: nil, repeats: true)
+    }
+    
+    public func pollQuotes() {
+        fetchQuotes()
     }
     
     public func fetchTrades() {
@@ -74,10 +84,10 @@ public class PositionsViewController: BaseViewController {
         let baseUrl = NetworkManager.sharedInstance.baseUrl
         let request = Alamofire.request(.GET, "\(baseUrl)/trades.json", parameters: nil, encoding: .JSON, headers: nil)
         spinner.startAnimating()
+        
         request.responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.spinner.stopAnimating()
-            
             // Handle response here
             switch response.result {
             case .Success(let JSON):
@@ -118,11 +128,15 @@ public class PositionsViewController: BaseViewController {
     }
     
     public func fetchQuotes() {
+        print("Fetching quotes")
+        
         let pairs = positionsData.map { (position) -> String in
             return position.pair
         }
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         Alamofire.request(.GET, "https://rates.fxcm.com/RatesXML", parameters: nil).response { [weak self] (request, response, data, error) in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             guard let strongSelf = self else { return }
             if let data = data {
                 let xml = SWXMLHash.parse(data)
