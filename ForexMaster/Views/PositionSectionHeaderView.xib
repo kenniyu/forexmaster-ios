@@ -46,23 +46,23 @@
                             <rect key="frame" x="0.0" y="0.0" width="252" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81u-cs-DRr">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81u-cs-DRr">
+                            <rect key="frame" x="0.0" y="0.0" width="88" height="32"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="QN4-mw-e5u"/>
+                                <constraint firstAttribute="width" constant="88" id="QN4-mw-e5u"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H95-W7-YxD">
-                            <rect key="frame" x="100" y="0.0" width="100" height="32"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H95-W7-YxD">
+                            <rect key="frame" x="100" y="0.0" width="88" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWI-mz-JxM">
-                            <rect key="frame" x="200" y="0.0" width="100" height="32"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWI-mz-JxM">
+                            <rect key="frame" x="200" y="0.0" width="88" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -73,11 +73,11 @@
                         <constraint firstItem="H95-W7-YxD" firstAttribute="width" secondItem="81u-cs-DRr" secondAttribute="width" id="2LR-Ad-zrX"/>
                         <constraint firstAttribute="bottom" secondItem="81u-cs-DRr" secondAttribute="bottom" id="DVI-os-FvH"/>
                         <constraint firstAttribute="bottom" secondItem="AWo-bd-7no" secondAttribute="bottom" id="Gns-ak-AyY"/>
-                        <constraint firstItem="H95-W7-YxD" firstAttribute="leading" secondItem="81u-cs-DRr" secondAttribute="trailing" id="Kf6-hb-TwQ"/>
+                        <constraint firstItem="H95-W7-YxD" firstAttribute="leading" secondItem="81u-cs-DRr" secondAttribute="trailing" constant="12" id="Kf6-hb-TwQ"/>
                         <constraint firstItem="AWo-bd-7no" firstAttribute="height" secondItem="OB8-8y-NAH" secondAttribute="height" id="Lza-QB-Us6"/>
                         <constraint firstItem="81u-cs-DRr" firstAttribute="leading" secondItem="OB8-8y-NAH" secondAttribute="leading" id="Pwt-xN-zT0"/>
                         <constraint firstItem="AWo-bd-7no" firstAttribute="top" secondItem="OB8-8y-NAH" secondAttribute="top" id="RPy-Lr-fAd"/>
-                        <constraint firstItem="pWI-mz-JxM" firstAttribute="leading" secondItem="H95-W7-YxD" secondAttribute="trailing" id="U3B-wB-Pds"/>
+                        <constraint firstItem="pWI-mz-JxM" firstAttribute="leading" secondItem="H95-W7-YxD" secondAttribute="trailing" constant="12" id="U3B-wB-Pds"/>
                         <constraint firstAttribute="trailing" secondItem="AWo-bd-7no" secondAttribute="trailing" id="UOH-gQ-r5l"/>
                         <constraint firstItem="pWI-mz-JxM" firstAttribute="top" secondItem="OB8-8y-NAH" secondAttribute="top" id="Yvc-oz-OUW"/>
                         <constraint firstItem="H95-W7-YxD" firstAttribute="top" secondItem="OB8-8y-NAH" secondAttribute="top" id="eGa-Ow-j0I"/>

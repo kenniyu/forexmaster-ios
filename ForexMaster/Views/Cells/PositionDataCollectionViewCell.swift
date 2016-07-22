@@ -61,7 +61,13 @@ public class PositionDataCollectionViewCell: UICollectionViewCell {
         case .PnL:
             guard let profitLoss = viewModel.data as? String else { return }
             guard let profitLossDouble = Double(profitLoss) else { return }
-            dataLabel.text = CurrencyUtils.toCurrencyString(profitLossDouble, maximumFractionDigits: 2)
+            var currencyString = CurrencyUtils.toCurrencyString(profitLossDouble, maximumFractionDigits: 2)
+            if currencyString.containsString("-") {
+                currencyString = currencyString.stringByReplacingOccurrencesOfString("-", withString: "")
+                currencyString = "(\(currencyString))"
+            }
+            
+            dataLabel.text = currencyString
             if profitLossDouble > 0 {
                 dataLabel.textColor = Styles.Colors.Green
             } else if profitLossDouble < 0 {

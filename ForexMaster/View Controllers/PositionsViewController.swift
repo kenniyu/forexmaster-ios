@@ -35,6 +35,7 @@ public class PositionsViewController: BaseViewController {
     public var quotesData: [String: Quote] = [:]
     public var quoteRefreshTimer: NSTimer? = nil
     public var sectionHeaderView: PositionSectionHeaderView?
+    public var scrollViewContentOffset: CGFloat = 0
     
     public var sortDirection: PairSortDirection = .None
     
@@ -225,6 +226,7 @@ extension PositionsViewController: UITableViewDelegate, UITableViewDataSource {
             let viewModel = PositionTableViewCellModel(position: positionsData[indexPath.row])
             cell.setup(viewModel)
             cell.positionTableViewCellDelegate = self
+            cell.collectionView.contentOffset.x = scrollViewContentOffset
             return cell
         }
         return UITableViewCell()
@@ -240,6 +242,7 @@ extension PositionsViewController: UITableViewDelegate, UITableViewDataSource {
             sectionHeaderView.setup(sortDirection)
             sectionHeaderView.positionTableViewCellDelegate = self
             sectionHeaderView.positionSectionHeaderViewDelegate = self
+            sectionHeaderView.scrollView.contentOffset.x = scrollViewContentOffset
             return sectionHeaderView
         }
         return nil
@@ -252,6 +255,8 @@ extension PositionsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension PositionsViewController: PositionTableViewCellDelegate {
     public func didScrollScrollView(view: UIView, scrollViewOffset: CGFloat) {
+        scrollViewContentOffset = scrollViewOffset
+        
         let visibleCells = tableView.visibleCells
         if view is UITableViewCell {
             // we scrolled a cell, so scroll section header here
