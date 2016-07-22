@@ -48,7 +48,7 @@ public class HistoryViewController: BaseViewController {
             bannerView.rootViewController = self
             
             let request = GADRequest()
-            request.contentURL = "http://www.forexfactory.com/"
+            request.contentURL = "https://www.fxcm.com/insights/markets/"
             request.testDevices = [kDFPSimulatorID, "ffe7748b1c0b67e1e502538e4e814a4228f5a25f"]
             bannerView.loadRequest(request)
         } else {
