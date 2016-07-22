@@ -17,7 +17,8 @@ public struct EnvironmentManagerKeys {
 public class EnvironmentManager {
     static let sharedInstance = EnvironmentManager()
     
-    public var baseUrl: String
+    public var baseUrl: String = "http://localhost:3000"
+    public var configuration: String = "Debug"
     
     private init() {
         let bundle = NSBundle.mainBundle()
@@ -29,9 +30,11 @@ public class EnvironmentManager {
             environment = environments.objectForKey(configuration) {
             if let baseUrl = environment.valueForKey(EnvironmentManagerKeys.kBaseUrlKey) as? String {
                 self.baseUrl = baseUrl
+                if let configuration = configuration as? String {
+                    self.configuration = configuration
+                }
                 return
             }
         }
-        baseUrl = "http://localhost:3000"
     }
 }

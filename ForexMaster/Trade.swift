@@ -22,8 +22,8 @@ public class Trade: Mappable {
     // Mappable
     public func mapping(map: Map) {
         pair        <- map["pair"]
-        size       <- map["size"]
-        mark          <- map["mark"]
-        date          <- (map["date"], DateTransform())
+        size        <- map["size"]
+        mark        <- map["mark"]
+        date        <- (map["date"], DateTransform())
     }
 }

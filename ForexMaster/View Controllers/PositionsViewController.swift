@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 import GoogleMobileAds
 import SWXMLHash
+import FirebaseAnalytics
 
 public class PositionsViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -36,6 +37,10 @@ public class PositionsViewController: BaseViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kPositionsScreenPageView, parameters: [
+            "env": EnvironmentManager.sharedInstance.configuration
+        ])
         fetchTrades()
         fetchQuotes()
     }

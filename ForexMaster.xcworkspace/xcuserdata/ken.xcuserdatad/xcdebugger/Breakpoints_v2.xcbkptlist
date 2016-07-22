@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ForexMaster/View Controllers/PositionsViewController.swift"
-            timestampString = "490824845.01804"
+            timestampString = "490839802.688202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "pollQuotes()"
             landmarkType = "5">
             <Locations>

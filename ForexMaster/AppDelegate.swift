@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Firebase
         FIRApp.configure()
-
+        
         // Push notifications
         registerForPushNotifications(application)
         

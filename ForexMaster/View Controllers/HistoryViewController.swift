@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import ObjectMapper
 import GoogleMobileAds
+import FirebaseAnalytics
 
 public class HistoryViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +35,10 @@ public class HistoryViewController: BaseViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kHistoryScreenPageView, parameters: [
+            "env": EnvironmentManager.sharedInstance.configuration
+        ])
         fetchTrades()
     }
     
