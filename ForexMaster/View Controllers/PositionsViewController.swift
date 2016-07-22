@@ -33,6 +33,7 @@ public class PositionsViewController: BaseViewController {
     public var positionsData: [Position] = []
     public var quotesData: [String: Quote] = [:]
     public var quoteRefreshTimer: NSTimer? = nil
+    public var sectionHeaderView: PositionSectionHeaderView?
     
     public override var navBarTitle: String {
         get {
@@ -199,6 +200,7 @@ extension PositionsViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCellWithIdentifier(PositionTableViewCell.kReuseIdentifier, forIndexPath: indexPath) as? PositionTableViewCell {
             let viewModel = PositionTableViewCellModel(position: positionsData[indexPath.row])
             cell.setup(viewModel)
+            cell.positionTableViewCellDelegate = self
             return cell
         }
         return UITableViewCell()
@@ -209,12 +211,38 @@ extension PositionsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = PositionSectionHeaderView(frame: CGRectMake(0, 0, tableView.width, PositionSectionHeaderView.kHeight))
-        view.setup()
-        return view
+        sectionHeaderView = PositionSectionHeaderView(frame: CGRectMake(0, 0, tableView.width, PositionSectionHeaderView.kHeight))
+        if let sectionHeaderView = sectionHeaderView {
+            sectionHeaderView.setup()
+            sectionHeaderView.positionTableViewCellDelegate = self
+            return sectionHeaderView
+        }
+        return nil
     }
     
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return PositionSectionHeaderView.kHeight
+    }
+}
+
+extension PositionsViewController: PositionTableViewCellDelegate {
+    public func didScrollScrollView(view: UIView, scrollViewOffset: CGFloat) {
+        let visibleCells = tableView.visibleCells
+        if view is UITableViewCell {
+            // we scrolled a cell, so scroll section header here
+            sectionHeaderView?.scrollView.contentOffset.x = scrollViewOffset
+        }
+        
+        for tableViewCell in visibleCells {
+            if let currentCell = tableViewCell as? PositionTableViewCell {
+                if currentCell == view {
+                    print("Match current cell")
+                    continue
+                } else {
+                    print("Should reload this cell")
+                    currentCell.collectionView.contentOffset.x = scrollViewOffset
+                }
+            }
+        }
     }
 }

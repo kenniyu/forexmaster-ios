@@ -39,43 +39,39 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1032" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-qf-YIt">
-                                <rect key="frame" x="121" y="0.0" width="147.5" height="64.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1050" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45S-cr-Q9I">
-                                <rect key="frame" x="268.5" y="0.0" width="147.5" height="64.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uE9-Ok-WjC">
+                                <rect key="frame" x="121" y="0.0" width="295" height="65"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hNE-kd-0dW">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="Meg-9Y-RBS"/>
+                                    <outlet property="delegate" destination="-1" id="u25-BJ-kUV"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="O2b-qf-YIt" firstAttribute="top" secondItem="eYk-e0-o54" secondAttribute="top" id="2Ym-xd-pz3"/>
-                            <constraint firstItem="O2b-qf-YIt" firstAttribute="leading" secondItem="ON3-ic-roc" secondAttribute="trailing" id="3gk-Xp-RrX"/>
-                            <constraint firstAttribute="trailing" secondItem="O2b-qf-YIt" secondAttribute="trailing" id="4hh-ai-GZM"/>
+                            <constraint firstAttribute="trailing" secondItem="uE9-Ok-WjC" secondAttribute="trailing" id="3cU-ij-a85"/>
                             <constraint firstAttribute="bottom" secondItem="ON3-ic-roc" secondAttribute="bottom" id="5te-9F-UcH"/>
                             <constraint firstItem="1S0-vR-aPl" firstAttribute="top" secondItem="PFv-fE-20Z" secondAttribute="bottom" id="6vZ-NK-qoq"/>
-                            <constraint firstAttribute="bottom" secondItem="O2b-qf-YIt" secondAttribute="bottom" id="Abf-1i-y3T"/>
-                            <constraint firstItem="45S-cr-Q9I" firstAttribute="leading" secondItem="O2b-qf-YIt" secondAttribute="trailing" id="Hh7-XA-Mbl"/>
-                            <constraint firstAttribute="bottom" secondItem="45S-cr-Q9I" secondAttribute="bottom" id="I6u-Ku-vbm"/>
                             <constraint firstItem="ON3-ic-roc" firstAttribute="top" secondItem="eYk-e0-o54" secondAttribute="top" id="Ikm-BC-CLA"/>
                             <constraint firstItem="1S0-vR-aPl" firstAttribute="leading" secondItem="PFv-fE-20Z" secondAttribute="leading" id="Jn6-SL-ACz"/>
-                            <constraint firstItem="45S-cr-Q9I" firstAttribute="top" secondItem="eYk-e0-o54" secondAttribute="top" id="NkX-gq-VpK"/>
                             <constraint firstAttribute="bottom" secondItem="PFv-fE-20Z" secondAttribute="bottom" id="Ph6-TO-yec"/>
                             <constraint firstItem="PFv-fE-20Z" firstAttribute="leading" secondItem="eYk-e0-o54" secondAttribute="leading" constant="20" id="RpJ-lL-5nc"/>
+                            <constraint firstItem="uE9-Ok-WjC" firstAttribute="top" secondItem="eYk-e0-o54" secondAttribute="top" id="Sxt-ef-pMc"/>
                             <constraint firstItem="1S0-vR-aPl" firstAttribute="trailing" secondItem="PFv-fE-20Z" secondAttribute="trailing" id="WD8-AJ-6Xt"/>
-                            <constraint firstItem="O2b-qf-YIt" firstAttribute="width" secondItem="1S0-vR-aPl" secondAttribute="width" id="ZHV-sJ-Dx2"/>
+                            <constraint firstAttribute="bottom" secondItem="uE9-Ok-WjC" secondAttribute="bottom" id="X6s-Zc-ijl"/>
+                            <constraint firstItem="uE9-Ok-WjC" firstAttribute="leading" secondItem="1S0-vR-aPl" secondAttribute="trailing" id="XAk-yX-fgZ"/>
+                            <constraint firstItem="uE9-Ok-WjC" firstAttribute="leading" secondItem="ON3-ic-roc" secondAttribute="trailing" id="ZLR-5i-6I7"/>
                             <constraint firstItem="ON3-ic-roc" firstAttribute="leading" secondItem="PFv-fE-20Z" secondAttribute="trailing" id="a8p-cw-P3d"/>
                             <constraint firstAttribute="bottom" secondItem="1S0-vR-aPl" secondAttribute="bottom" constant="8" id="d3X-XO-G3S"/>
                             <constraint firstItem="1S0-vR-aPl" firstAttribute="leading" secondItem="ON3-ic-roc" secondAttribute="trailing" id="dz3-oc-wK2"/>
-                            <constraint firstItem="O2b-qf-YIt" firstAttribute="leading" secondItem="1S0-vR-aPl" secondAttribute="trailing" id="g2c-ta-sxP"/>
-                            <constraint firstAttribute="trailing" secondItem="45S-cr-Q9I" secondAttribute="trailing" id="rWq-R7-ITU"/>
                             <constraint firstItem="PFv-fE-20Z" firstAttribute="top" secondItem="eYk-e0-o54" secondAttribute="top" constant="8" id="t7R-zX-iL2"/>
-                            <constraint firstItem="45S-cr-Q9I" firstAttribute="width" secondItem="O2b-qf-YIt" secondAttribute="width" id="wGa-NZ-Pne"/>
                             <constraint firstAttribute="bottom" secondItem="1S0-vR-aPl" secondAttribute="bottom" id="wpF-Yp-Rxp"/>
                             <constraint firstItem="1S0-vR-aPl" firstAttribute="top" secondItem="eYk-e0-o54" secondAttribute="top" id="zfJ-xR-O4s"/>
                         </constraints>
@@ -85,9 +81,7 @@
                                 <exclude reference="dz3-oc-wK2"/>
                                 <exclude reference="wpF-Yp-Rxp"/>
                                 <exclude reference="zfJ-xR-O4s"/>
-                                <exclude reference="4hh-ai-GZM"/>
-                                <exclude reference="ZHV-sJ-Dx2"/>
-                                <exclude reference="g2c-ta-sxP"/>
+                                <exclude reference="XAk-yX-fgZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -100,10 +94,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="collectionView" destination="uE9-Ok-WjC" id="b1z-3M-54r"/>
                 <outlet property="containerView" destination="eYk-e0-o54" id="WsV-Hq-WeK"/>
-                <outlet property="costBasisLabel" destination="O2b-qf-YIt" id="h98-Ig-pf8"/>
                 <outlet property="pairLabel" destination="PFv-fE-20Z" id="lSl-Jh-Maz"/>
-                <outlet property="quoteLabel" destination="45S-cr-Q9I" id="vKe-rQ-GaN"/>
                 <outlet property="sizeLabel" destination="1S0-vR-aPl" id="glR-NI-QdH"/>
                 <outlet property="verticalBorderView" destination="ON3-ic-roc" id="NqK-7o-62o"/>
             </connections>

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BE0E659F1D419DA20094C635 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E659E1D419DA20094C635 /* FirebaseAnalytics.swift */; };
+		BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A842C1D41C1990051CA7A /* PositionDataCollectionViewCell.swift */; };
+		BE3A842F1D41C1990051CA7A /* PositionDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */; };
+		BE3A84321D41D63C0051CA7A /* CurrencyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */; };
 		BE5CF2A81D411CA500C072CB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CF2A71D411CA500C072CB /* NetworkManager.swift */; };
 		BE5CF2AB1D4125F900C072CB /* Environments.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5CF2AA1D4125F900C072CB /* Environments.plist */; };
 		BE5CF2AD1D41263300C072CB /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CF2AC1D41263300C072CB /* EnvironmentManager.swift */; };
@@ -54,6 +57,9 @@
 		5887E52CFDBB8CE7F524FE70 /* Pods-ForexMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForexMaster/Pods-ForexMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		A2255CAD087EBBB0DD974E50 /* Pods_ForexMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForexMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0E659E1D419DA20094C635 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		BE3A842C1D41C1990051CA7A /* PositionDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionDataCollectionViewCell.xib; sourceTree = "<group>"; };
+		BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyUtils.swift; sourceTree = "<group>"; };
 		BE5CF2A71D411CA500C072CB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BE5CF2AA1D4125F900C072CB /* Environments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environments.plist; path = Resources/Environments.plist; sourceTree = "<group>"; };
 		BE5CF2AC1D41263300C072CB /* EnvironmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
@@ -138,6 +144,14 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		BE3A84301D41D6300051CA7A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		BE5CF2A91D4125F300C072CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +190,7 @@
 		BE8C396B1D3F023A00008829 /* ForexMaster */ = {
 			isa = PBXGroup;
 			children = (
+				BE3A84301D41D6300051CA7A /* Utilities */,
 				BE0E659D1D419D8F0094C635 /* Constants */,
 				BE5CF2A91D4125F300C072CB /* Resources */,
 				BEB644751D401EC600B0315D /* Managers */,
@@ -246,6 +261,8 @@
 				BE757B451D3FDEE6002B64ED /* PositionTableViewCell.xib */,
 				BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */,
 				BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */,
+				BE3A842C1D41C1990051CA7A /* PositionDataCollectionViewCell.swift */,
+				BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -340,6 +357,7 @@
 				BE8C39DA1D3F042900008829 /* FilterViewController.xib in Resources */,
 				BE8C3A021D3F04C200008829 /* HistoryViewController.xib in Resources */,
 				BE8C39DC1D3F042900008829 /* HomeViewController.xib in Resources */,
+				BE3A842F1D41C1990051CA7A /* PositionDataCollectionViewCell.xib in Resources */,
 				BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */,
 				BE8C39721D3F023A00008829 /* Main.storyboard in Resources */,
 			);
@@ -402,12 +420,14 @@
 			files = (
 				BE757B491D3FF15E002B64ED /* PositionSectionHeaderView.swift in Sources */,
 				BE757B431D3F3678002B64ED /* Position.swift in Sources */,
+				BE3A84321D41D63C0051CA7A /* CurrencyUtils.swift in Sources */,
 				BEB6447D1D40223B00B0315D /* Trade.swift in Sources */,
 				BE0E659F1D419DA20094C635 /* FirebaseAnalytics.swift in Sources */,
 				BE8C39C71D3F03C700008829 /* ViewController.swift in Sources */,
 				BE5CF2A81D411CA500C072CB /* NetworkManager.swift in Sources */,
 				BE757B461D3FDEE6002B64ED /* PositionTableViewCell.swift in Sources */,
 				BE8C39C51D3F03C700008829 /* UIView+.swift in Sources */,
+				BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */,
 				BE8C39DD1D3F042900008829 /* InitialViewController.swift in Sources */,
 				BE8C39F51D3F043700008829 /* ProfileHeaderView.swift in Sources */,
 				BE8C39C41D3F03C700008829 /* UIImage+.swift in Sources */,
