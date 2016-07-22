@@ -38,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class func createMainTabBarController() -> MainTabBarController {
         // add feed view controller and settings view controller
         
+        let accountSummaryViewController = AccountSummaryViewController(nibName: "AccountSummaryViewController", bundle: nil)
+        let accountSummaryNavigationViewController = UINavigationController(rootViewController: accountSummaryViewController)
+        accountSummaryNavigationViewController.tabBarItem.image = UIImage(named: "performance.png")
+        accountSummaryNavigationViewController.title = "Performance"
+        
         let positionsViewController = PositionsViewController(nibName: "PositionsViewController", bundle: nil)
         let positionsNavigationViewController = UINavigationController(rootViewController: positionsViewController)
         positionsNavigationViewController.tabBarItem.image = UIImage(named: "portfolio.png")
@@ -48,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         historyNavigationViewController.tabBarItem.image = UIImage(named: "history.png")
         historyNavigationViewController.title = "History"
         
-        let tabBarControllers = [positionsNavigationViewController, historyNavigationViewController]
+        let tabBarControllers = [accountSummaryNavigationViewController, positionsNavigationViewController, historyNavigationViewController]
         
         let mainTabBarController = MainTabBarController()
         mainTabBarController.viewControllers = tabBarControllers
