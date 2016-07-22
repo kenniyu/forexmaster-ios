@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ForexMaster/View Controllers/PositionsViewController.swift"
-            timestampString = "490856140.257763"
+            filePath = "ForexMaster/Views/PositionSectionHeaderView.swift"
+            timestampString = "490897428.046167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "pollQuotes()"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "stringForSortDirection()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ForexMaster/View Controllers/PositionsViewController.swift"
-            timestampString = "490857501.560492"
+            filePath = "ForexMaster/Views/PositionSectionHeaderView.swift"
+            timestampString = "490898756.822767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "tappedPairButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

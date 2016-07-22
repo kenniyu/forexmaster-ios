@@ -8,9 +8,20 @@
 
 import UIKit
 
+public enum PairSortDirection: Int {
+    case None
+    case Up
+    case Down
+}
+
+
+public protocol PositionSectionHeaderViewDelegate {
+    func didSort(sortDirection: PairSortDirection)
+}
+
 public class PositionSectionHeaderView: UIView {
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var pairLabel: UILabel!
+    @IBOutlet weak var pairButton: UIButton!
     @IBOutlet weak var profitLossLabel: UILabel!
     @IBOutlet weak var costBasisLabel: UILabel!
     @IBOutlet weak var markLabel: UILabel!
@@ -20,7 +31,10 @@ public class PositionSectionHeaderView: UIView {
     
     public static let kHeight: CGFloat = 32
     
+    public var sortDirection: PairSortDirection = .None
+    
     public var positionTableViewCellDelegate: PositionTableViewCellDelegate?
+    public var positionSectionHeaderViewDelegate: PositionSectionHeaderViewDelegate?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +64,22 @@ public class PositionSectionHeaderView: UIView {
         layoutIfNeeded()
     }
     
+    public func stringForSortDirection() -> String {
+        switch sortDirection {
+        case .Up:
+            return "\u{25B2}"
+        case .Down:
+            return "\u{25BC}"
+        default:
+            return ""
+        }
+    }
+    
     public func loadDataIntoViews() {
+        let sortDirectionStr = stringForSortDirection()
+        let pairButtonTitle = "Pair \(sortDirectionStr)"
+        pairButton.titleLabel?.text = pairButtonTitle
+        pairButton.setTitle(pairButtonTitle, forState: .Normal)
         profitLossLabel.text = "P/L Open"
         costBasisLabel.text = "Cost Basis"
         markLabel.text = "Mark"
@@ -62,14 +91,16 @@ public class PositionSectionHeaderView: UIView {
         scrollView.contentSize = CGSizeMake(3 * 100, PositionSectionHeaderView.kHeight)
     }
     
-    public func setup() {
+    public func setup(sortDirection: PairSortDirection = .None) {
+        self.sortDirection = sortDirection
         setupStyles()
         loadDataIntoViews()
     }
     
     public func setupStyles() {
-        pairLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
-        pairLabel.textColor = Styles.Colors.Black
+        pairButton.titleLabel?.font = Styles.Fonts.avenirRegularFontWithSize(14)
+        pairButton.titleLabel?.textColor = Styles.Colors.Black
+        pairButton.tintColor = Styles.Colors.Black
         
         profitLossLabel.font = Styles.Fonts.avenirRegularFontWithSize(14)
         profitLossLabel.textColor = Styles.Colors.Black
@@ -80,6 +111,18 @@ public class PositionSectionHeaderView: UIView {
         
         bottomBorderView.backgroundColor = Styles.Colors.Black.colorWithAlphaComponent(0.1)
         verticalBorderView.backgroundColor = Styles.Colors.Black.colorWithAlphaComponent(0.1)
+    }
+    
+    @IBAction func tappedPairButton(sender: UIButton) {
+        switch sortDirection {
+        case .None:
+            sortDirection = .Up
+        case .Up:
+            sortDirection = .Down
+        case .Down:
+            sortDirection = .None
+        }
+        positionSectionHeaderViewDelegate?.didSort(sortDirection)
     }
 }
 

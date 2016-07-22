@@ -31,9 +31,12 @@ public class PositionsViewController: BaseViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     public var positionsData: [Position] = []
+    public var unsortedPositionsData: [Position] = []
     public var quotesData: [String: Quote] = [:]
     public var quoteRefreshTimer: NSTimer? = nil
     public var sectionHeaderView: PositionSectionHeaderView?
+    
+    public var sortDirection: PairSortDirection = .None
     
     public override var navBarTitle: String {
         get {
@@ -121,15 +124,35 @@ public class PositionsViewController: BaseViewController {
     
     public func updatePositions(positions: [[String: AnyObject]]) {
         positionsData = []
+        unsortedPositionsData = []
         for positionJson in positions {
             if let position = Mapper<Position>().map(positionJson) {
                 positionsData.append(position)
+                unsortedPositionsData.append(position)
             }
         }
+        
+        // Sort positions
+        sortPositions()
         
         // Now that we have all positions, make query to fetch all quotes
         fetchQuotes()
         tableView.reloadData()
+    }
+    
+    public func sortPositions() {
+        if sortDirection == .None {
+            positionsData = unsortedPositionsData
+        } else {
+            let sortedPositions = positionsData.sort { (positionOne, positionTwo) -> Bool in
+                if sortDirection == .Down {
+                    return positionOne.pair > positionTwo.pair
+                } else {
+                    return positionTwo.pair > positionOne.pair
+                }
+            }
+            positionsData = sortedPositions
+        }
     }
     
     public func updateQuotes() {
@@ -213,8 +236,9 @@ extension PositionsViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         sectionHeaderView = PositionSectionHeaderView(frame: CGRectMake(0, 0, tableView.width, PositionSectionHeaderView.kHeight))
         if let sectionHeaderView = sectionHeaderView {
-            sectionHeaderView.setup()
+            sectionHeaderView.setup(sortDirection)
             sectionHeaderView.positionTableViewCellDelegate = self
+            sectionHeaderView.positionSectionHeaderViewDelegate = self
             return sectionHeaderView
         }
         return nil
@@ -236,13 +260,19 @@ extension PositionsViewController: PositionTableViewCellDelegate {
         for tableViewCell in visibleCells {
             if let currentCell = tableViewCell as? PositionTableViewCell {
                 if currentCell == view {
-                    print("Match current cell")
                     continue
                 } else {
-                    print("Should reload this cell")
                     currentCell.collectionView.contentOffset.x = scrollViewOffset
                 }
             }
         }
+    }
+}
+
+extension PositionsViewController: PositionSectionHeaderViewDelegate {
+    public func didSort(sortDirection: PairSortDirection) {
+        self.sortDirection = sortDirection
+        sortPositions()
+        tableView.reloadData()
     }
 }

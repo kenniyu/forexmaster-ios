@@ -10,7 +10,7 @@
                 <outlet property="bottomBorderView" destination="iny-il-yud" id="MeC-WC-0bd"/>
                 <outlet property="costBasisLabel" destination="H95-W7-YxD" id="5b1-Zz-v2v"/>
                 <outlet property="markLabel" destination="pWI-mz-JxM" id="2RZ-Z8-32V"/>
-                <outlet property="pairLabel" destination="arI-8f-TFn" id="Xfg-Ix-XBx"/>
+                <outlet property="pairButton" destination="LSc-cg-cxg" id="yxB-Mb-Yg4"/>
                 <outlet property="profitLossLabel" destination="81u-cs-DRr" id="Fdi-VT-kp7"/>
                 <outlet property="scrollView" destination="OB8-8y-NAH" id="ofl-G1-oBT"/>
                 <outlet property="verticalBorderView" destination="e2n-VK-dpl" id="NaW-Uk-scD"/>
@@ -22,15 +22,16 @@
             <rect key="frame" x="0.0" y="0.0" width="373" height="32"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arI-8f-TFn">
-                    <rect key="frame" x="20" y="0.0" width="100" height="32"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-cg-cxg">
+                    <rect key="frame" x="20" y="0.0" width="100" height="31"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="uQR-Bc-jCk"/>
+                        <constraint firstAttribute="width" constant="100" id="FYK-Mv-cKU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <state key="normal" title="Pair"/>
+                    <connections>
+                        <action selector="tappedPairButton:" destination="-1" eventType="touchUpInside" id="98K-br-0qN"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-VK-dpl">
                     <rect key="frame" x="120" y="0.0" width="1" height="32"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,26 +97,31 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="OB8-8y-NAH" firstAttribute="leading" secondItem="arI-8f-TFn" secondAttribute="trailing" id="0jf-rp-TWc"/>
                 <constraint firstAttribute="bottom" secondItem="OB8-8y-NAH" secondAttribute="bottom" id="3Ok-Gc-LMt"/>
+                <constraint firstItem="LSc-cg-cxg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="6HM-QS-j3K"/>
+                <constraint firstItem="LSc-cg-cxg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ALn-iI-7Cf"/>
                 <constraint firstAttribute="bottom" secondItem="e2n-VK-dpl" secondAttribute="bottom" id="EXs-m3-LoZ"/>
                 <constraint firstItem="OB8-8y-NAH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IOh-Id-4Qg"/>
                 <constraint firstAttribute="bottom" secondItem="iny-il-yud" secondAttribute="bottom" id="MEa-qe-Rkq"/>
-                <constraint firstItem="arI-8f-TFn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="QEP-1U-NRZ"/>
+                <constraint firstItem="e2n-VK-dpl" firstAttribute="leading" secondItem="LSc-cg-cxg" secondAttribute="trailing" id="PjG-2d-3r6"/>
                 <constraint firstItem="e2n-VK-dpl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QV0-Wy-8Zf"/>
-                <constraint firstAttribute="bottom" secondItem="arI-8f-TFn" secondAttribute="bottom" id="R2n-mg-29p"/>
                 <constraint firstAttribute="trailing" secondItem="OB8-8y-NAH" secondAttribute="trailing" id="Vt6-ED-Gg3"/>
-                <constraint firstItem="arI-8f-TFn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XwC-6d-OCR"/>
+                <constraint firstItem="OB8-8y-NAH" firstAttribute="leading" secondItem="e2n-VK-dpl" secondAttribute="trailing" id="jHL-ha-jeg"/>
                 <constraint firstAttribute="trailing" secondItem="iny-il-yud" secondAttribute="trailing" id="jm1-sm-Hne"/>
-                <constraint firstItem="e2n-VK-dpl" firstAttribute="leading" secondItem="arI-8f-TFn" secondAttribute="trailing" id="kQY-8C-u4B"/>
+                <constraint firstItem="OB8-8y-NAH" firstAttribute="leading" secondItem="LSc-cg-cxg" secondAttribute="trailing" id="ne1-8l-TIA"/>
                 <constraint firstItem="OB8-8y-NAH" firstAttribute="leading" secondItem="e2n-VK-dpl" secondAttribute="trailing" id="pUa-vk-3bb"/>
+                <constraint firstItem="OB8-8y-NAH" firstAttribute="leading" secondItem="LSc-cg-cxg" secondAttribute="trailing" id="scq-7i-Sde"/>
+                <constraint firstItem="iny-il-yud" firstAttribute="top" secondItem="LSc-cg-cxg" secondAttribute="bottom" id="vGV-Uv-8W8"/>
                 <constraint firstItem="iny-il-yud" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x5i-YW-thU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="0jf-rp-TWc"/>
+                    <exclude reference="ne1-8l-TIA"/>
+                    <exclude reference="pUa-vk-3bb"/>
+                    <exclude reference="scq-7i-Sde"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="284.5" y="54"/>

@@ -130,7 +130,11 @@ public class PositionTableViewCell: UITableViewCell {
         guard let costBasis = Double(viewModel.position.costBasis) else { return "-" }
         let size = Double(viewModel.position.size)
         
-        let profitLoss = size * (mark - costBasis)
+        var divisor: Double = 1
+        if mark > 9 {
+            divisor = 100
+        }
+        let profitLoss = size * (mark - costBasis) / divisor
         return String(profitLoss)
     }
 }
