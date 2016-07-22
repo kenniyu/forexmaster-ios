@@ -64,7 +64,15 @@ public class PositionTableViewCell: UITableViewCell {
         costBasisLabel.text = String(viewModel.position.costBasis)
         
         if let quote = viewModel.position.quote {
-            quoteLabel.text = quote
+            quoteLabel.text = String(quote.quote)
+            switch quote.direction {
+            case 1:
+                quoteLabel.textColor = Styles.Colors.Green
+            case -1:
+                quoteLabel.textColor = Styles.Colors.Red
+            default:
+                quoteLabel.textColor = Styles.Colors.Gray
+            }
         }
     }
     

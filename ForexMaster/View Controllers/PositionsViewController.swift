@@ -13,6 +13,16 @@ import GoogleMobileAds
 import SWXMLHash
 import FirebaseAnalytics
 
+public class Quote {
+    var quote: Double
+    var direction: Int
+    
+    public init(quote: Double, direction: Int) {
+        self.quote = quote
+        self.direction = direction
+    }
+}
+
 public class PositionsViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -21,7 +31,7 @@ public class PositionsViewController: BaseViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     public var positionsData: [Position] = []
-    public var quotesData: [String: String] = [:]
+    public var quotesData: [String: Quote] = [:]
     public var quoteRefreshTimer: NSTimer? = nil
     
     public override var navBarTitle: String {
@@ -153,9 +163,15 @@ public class PositionsViewController: BaseViewController {
                         do {
                             let ask = try xml["Rates"]["Rate"].withAttr("Symbol", pairString)["Ask"].element?.text
                             
-                            if let bid = bid, ask = ask, bidDouble = Double(bid), askDouble = Double(ask) {
-                                let mark = (bidDouble + askDouble)/2
-                                strongSelf.quotesData[pair] = String(mark)
+                            do {
+                                let direction = try xml["Rates"]["Rate"].withAttr("Symbol", pairString)["Direction"].element?.text
+                                if let bid = bid, ask = ask, bidDouble = Double(bid), askDouble = Double(ask),
+                                    direction = direction, directionInt = Int(direction) {
+                                    let mark = (bidDouble + askDouble)/2
+                                    strongSelf.quotesData[pair] = Quote(quote: mark, direction: directionInt)
+                                }
+                            } catch {
+                                print("WTF")
                             }
                         } catch {
                             print("WTF")

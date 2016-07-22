@@ -13,7 +13,7 @@ public class Position: Mappable {
     var pair: String!
     var size: Int!
     var costBasis: String!
-    var quote: String? = nil
+    var quote: Quote? = nil
     
     required public init?(_ map: Map) {
         
