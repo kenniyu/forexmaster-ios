@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ForexMaster/AppDelegate.swift"
-            timestampString = "490923343.375033"
+            timestampString = "490988596.500395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -48,6 +48,102 @@
             startingLineNumber = "126"
             endingLineNumber = "126"
             landmarkName = "tappedPairButton(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForexMaster/Views/Cells/PositionTableViewCell.swift"
+            timestampString = "490943394.947795"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "setupColumnData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
+            timestampString = "490999419.269544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "setup(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForexMaster/View Controllers/AccountSummaryViewController.swift"
+            timestampString = "490994279.467676"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "fetchData()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ForexMaster.AccountSummaryViewController.(fetchData () -&gt; ()).(closure #1)"
+                  moduleName = "ForexMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/View%20Controllers/AccountSummaryViewController.swift"
+                  timestampString = "490999511.058692"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "513">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ForexMaster.AccountSummaryViewController.(fetchData () -&gt; ()).(closure #1)"
+                  moduleName = "ForexMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/View%20Controllers/AccountSummaryViewController.swift"
+                  timestampString = "490999511.058907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "585">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForexMaster/View Controllers/AccountSummaryViewController.swift"
+            timestampString = "490994295.993625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "updatePerformances(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -61,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return mainTabBarController
     }
     
+    func setupSegmentedControl() {
+        UISegmentedControl.appearance().tintColor = Styles.Colors.Green
+    }
+    
     func setupNavBar() {
         let topBarTextAttributes = [
             NSForegroundColorAttributeName: Styles.Colors.Black,

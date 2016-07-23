@@ -51,6 +51,11 @@
 		BEB6447A1D4021FC00B0315D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */; };
 		BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */; };
 		BEB6447D1D40223B00B0315D /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6447C1D40223B00B0315D /* Trade.swift */; };
+		BEBF9BCD1D4335CC003D3435 /* PerformanceChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF9BCB1D4335CC003D3435 /* PerformanceChartTableViewCell.swift */; };
+		BEBF9BCE1D4335CC003D3435 /* PerformanceChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBF9BCC1D4335CC003D3435 /* PerformanceChartTableViewCell.xib */; };
+		BEBF9BD01D43364A003D3435 /* PerformanceChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF9BCF1D43364A003D3435 /* PerformanceChart.swift */; };
+		BEBF9BD21D43366C003D3435 /* PerformanceChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */; };
+		BEBF9BD41D43F8B8003D3435 /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF9BD31D43F8B8003D3435 /* Performance.swift */; };
 		BEF927DB1D401258009AC0AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEF927DA1D401258009AC0AF /* GoogleService-Info.plist */; };
 		D0F7E05B52C8F46AA008EA9F /* Pods_ForexMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2255CAD087EBBB0DD974E50 /* Pods_ForexMaster.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +109,11 @@
 		BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		BEB6447C1D40223B00B0315D /* Trade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
+		BEBF9BCB1D4335CC003D3435 /* PerformanceChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceChartTableViewCell.swift; sourceTree = "<group>"; };
+		BEBF9BCC1D4335CC003D3435 /* PerformanceChartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerformanceChartTableViewCell.xib; sourceTree = "<group>"; };
+		BEBF9BCF1D43364A003D3435 /* PerformanceChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceChart.swift; sourceTree = "<group>"; };
+		BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerformanceChart.xib; sourceTree = "<group>"; };
+		BEBF9BD31D43F8B8003D3435 /* Performance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Performance.swift; sourceTree = "<group>"; };
 		BEF927DA1D401258009AC0AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEF927DC1D4013AC009AC0AF /* ForexMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForexMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		D333A1A9161ACA2A2B96B457 /* Pods-ForexMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForexMaster/Pods-ForexMaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 			children = (
 				BE757B421D3F3678002B64ED /* Position.swift */,
 				BEB6447C1D40223B00B0315D /* Trade.swift */,
+				BEBF9BD31D43F8B8003D3435 /* Performance.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -256,6 +267,8 @@
 				BE8C39EC1D3F043700008829 /* ProfileHeaderView.xib */,
 				BE757B481D3FF15E002B64ED /* PositionSectionHeaderView.swift */,
 				BE757B4A1D3FF169002B64ED /* PositionSectionHeaderView.xib */,
+				BEBF9BCF1D43364A003D3435 /* PerformanceChart.swift */,
+				BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +282,8 @@
 				BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */,
 				BE3A842C1D41C1990051CA7A /* PositionDataCollectionViewCell.swift */,
 				BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */,
+				BEBF9BCB1D4335CC003D3435 /* PerformanceChartTableViewCell.swift */,
+				BEBF9BCC1D4335CC003D3435 /* PerformanceChartTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -353,6 +368,7 @@
 				BE8C39771D3F023A00008829 /* LaunchScreen.storyboard in Resources */,
 				BE757B4B1D3FF169002B64ED /* PositionSectionHeaderView.xib in Resources */,
 				BE8C39D61D3F042900008829 /* BaseViewController.xib in Resources */,
+				BEBF9BCE1D4335CC003D3435 /* PerformanceChartTableViewCell.xib in Resources */,
 				BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */,
 				BE8C39F61D3F043700008829 /* ProfileHeaderView.xib in Resources */,
 				BE8C39DE1D3F042900008829 /* InitialViewController.xib in Resources */,
@@ -366,6 +382,7 @@
 				BE8C39DC1D3F042900008829 /* HomeViewController.xib in Resources */,
 				BE3A842F1D41C1990051CA7A /* PositionDataCollectionViewCell.xib in Resources */,
 				BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */,
+				BEBF9BD21D43366C003D3435 /* PerformanceChart.xib in Resources */,
 				BE8C39721D3F023A00008829 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,10 +448,12 @@
 				BEB6447D1D40223B00B0315D /* Trade.swift in Sources */,
 				BE0E659F1D419DA20094C635 /* FirebaseAnalytics.swift in Sources */,
 				BE8C39C71D3F03C700008829 /* ViewController.swift in Sources */,
+				BEBF9BD41D43F8B8003D3435 /* Performance.swift in Sources */,
 				BE5CF2A81D411CA500C072CB /* NetworkManager.swift in Sources */,
 				BE757B461D3FDEE6002B64ED /* PositionTableViewCell.swift in Sources */,
 				BE3A84351D42869B0051CA7A /* AccountSummaryViewController.swift in Sources */,
 				BE8C39C51D3F03C700008829 /* UIView+.swift in Sources */,
+				BEBF9BD01D43364A003D3435 /* PerformanceChart.swift in Sources */,
 				BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */,
 				BE8C39DD1D3F042900008829 /* InitialViewController.swift in Sources */,
 				BE8C39F51D3F043700008829 /* ProfileHeaderView.swift in Sources */,
@@ -446,6 +465,7 @@
 				BE8C39F81D3F044200008829 /* Styles.swift in Sources */,
 				BEB644771D401ED400B0315D /* ExperimentManager.swift in Sources */,
 				BE8C39DB1D3F042900008829 /* HomeViewController.swift in Sources */,
+				BEBF9BCD1D4335CC003D3435 /* PerformanceChartTableViewCell.swift in Sources */,
 				BE8C3A011D3F04C200008829 /* HistoryViewController.swift in Sources */,
 				BE8C39FA1D3F045500008829 /* MainTabBarController.swift in Sources */,
 				BE8C396D1D3F023A00008829 /* AppDelegate.swift in Sources */,
