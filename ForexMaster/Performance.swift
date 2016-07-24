@@ -11,7 +11,11 @@ import ObjectMapper
 
 
 public class Performance: Mappable {
-    var trades: [ClosedTrade] = []
+    var closedTrades: [ClosedTrade] = []
+    var initialBalance: Double!
+    var inceptionDate: NSDate!
+    var settledProfits: Double!
+    var returnPct: Double!
     
     required public init?(_ map: Map) {
         
@@ -19,7 +23,11 @@ public class Performance: Mappable {
     
     // Mappable
     public func mapping(map: Map) {
-        trades <- map["performance"]
+        closedTrades <- map["closed_trades"]
+        initialBalance <- map["initial_balance"]
+        inceptionDate <- (map["inception_date"], DateTransform())
+        settledProfits <- map["settled_profits"]
+        returnPct <- map["total_return"]
     }
 }
 

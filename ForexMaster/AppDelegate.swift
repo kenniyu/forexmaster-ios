@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let accountSummaryViewController = AccountSummaryViewController(nibName: "AccountSummaryViewController", bundle: nil)
         let accountSummaryNavigationViewController = UINavigationController(rootViewController: accountSummaryViewController)
         accountSummaryNavigationViewController.tabBarItem.image = UIImage(named: "performance.png")
-        accountSummaryNavigationViewController.title = "Performance"
+        accountSummaryNavigationViewController.title = "Account"
         
         let positionsViewController = PositionsViewController(nibName: "PositionsViewController", bundle: nil)
         let positionsNavigationViewController = UINavigationController(rootViewController: positionsViewController)

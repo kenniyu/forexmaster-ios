@@ -21,7 +21,7 @@ public class AccountSummaryViewController: BaseViewController {
     
     public override var navBarTitle: String {
         get {
-            return "Performance"
+            return "Account"
         }
     }
     
@@ -96,24 +96,39 @@ public class AccountSummaryViewController: BaseViewController {
     
     public func registerCells() {
         tableView.registerNib(PerformanceChartTableViewCell.kNib, forCellReuseIdentifier: PerformanceChartTableViewCell.kReuseIdentifier)
+        tableView.registerNib(AccountSummaryTableViewCell.kNib, forCellReuseIdentifier: AccountSummaryTableViewCell.kReuseIdentifier)
+        tableView.registerClass(BaseTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: BaseTableViewHeaderFooterView.kReuseIdentifier)
+        
     }
 }
 
 extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let performanceData = performanceData {
+        if let _ = performanceData {
             return 1
         }
         return 0
     }
     
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
+            if let cell = tableView.dequeueReusableCellWithIdentifier(AccountSummaryTableViewCell.kReuseIdentifier, forIndexPath: indexPath) as? AccountSummaryTableViewCell {
+                if let performanceData = performanceData {
+                    let viewModel = AccountSummaryTableViewCellModel(
+                        inceptionDate: performanceData.inceptionDate,
+                        initialBalance: performanceData.initialBalance,
+                        settledProfits: performanceData.settledProfits,
+                        returnPct: performanceData.returnPct)
+                    cell.setup(viewModel)
+                    return cell
+                }
+            }
+        case 1:
             if let cell = tableView.dequeueReusableCellWithIdentifier(PerformanceChartTableViewCell.kReuseIdentifier, forIndexPath: indexPath) as? PerformanceChartTableViewCell {
                 if let performanceData = performanceData {
                     let viewModel = PerformanceChartTableViewCellModel(performance: performanceData)
@@ -128,6 +143,33 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return PerformanceChartTableViewCell.kCellHeight
+        switch indexPath.section {
+        case 0:
+            return AccountSummaryTableViewCell.kCellHeight
+        case 1:
+            return PerformanceChartTableViewCell.kCellHeight
+        default:
+            break
+        }
+        return 0
+    }
+    
+    public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(BaseTableViewHeaderFooterView.kReuseIdentifier) as? BaseTableViewHeaderFooterView {
+            switch section {
+            case 0:
+                headerView.setup("Account Summary")
+            case 1:
+                headerView.setup("Performance")
+            default:
+                break
+            }
+            return headerView
+        }
+        return UIView()
+    }
+    
+    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return BaseTableViewHeaderFooterView.kHeight
     }
 }

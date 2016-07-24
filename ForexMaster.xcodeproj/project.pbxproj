@@ -47,6 +47,10 @@
 		BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8C39FC1D3F047E00008829 /* PositionsViewController.xib */; };
 		BE8C3A011D3F04C200008829 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8C39FF1D3F04C200008829 /* HistoryViewController.swift */; };
 		BE8C3A021D3F04C200008829 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8C3A001D3F04C200008829 /* HistoryViewController.xib */; };
+		BEAAAA441D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAAA421D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift */; };
+		BEAAAA451D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */; };
+		BEAAAA471D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAAA461D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift */; };
+		BEAAAA491D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAAAA481D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib */; };
 		BEB644771D401ED400B0315D /* ExperimentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB644761D401ED400B0315D /* ExperimentManager.swift */; };
 		BEB6447A1D4021FC00B0315D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */; };
 		BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */; };
@@ -106,6 +110,10 @@
 		BE8C39FC1D3F047E00008829 /* PositionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionsViewController.xib; sourceTree = "<group>"; };
 		BE8C39FF1D3F04C200008829 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BE8C3A001D3F04C200008829 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		BEAAAA421D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		BEAAAA461D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		BEAAAA481D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		BEB644761D401ED400B0315D /* ExperimentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentManager.swift; sourceTree = "<group>"; };
 		BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -272,6 +280,8 @@
 				BE757B4A1D3FF169002B64ED /* PositionSectionHeaderView.xib */,
 				BEBF9BCF1D43364A003D3435 /* PerformanceChart.swift */,
 				BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */,
+				BEAAAA461D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift */,
+				BEAAAA481D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,6 +297,8 @@
 				BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */,
 				BEBF9BCB1D4335CC003D3435 /* PerformanceChartTableViewCell.swift */,
 				BEBF9BCC1D4335CC003D3435 /* PerformanceChartTableViewCell.xib */,
+				BEAAAA421D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift */,
+				BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -372,6 +384,7 @@
 				BE757B4B1D3FF169002B64ED /* PositionSectionHeaderView.xib in Resources */,
 				BE8C39D61D3F042900008829 /* BaseViewController.xib in Resources */,
 				BEBF9BCE1D4335CC003D3435 /* PerformanceChartTableViewCell.xib in Resources */,
+				BEAAAA491D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib in Resources */,
 				BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */,
 				BE8C39F61D3F043700008829 /* ProfileHeaderView.xib in Resources */,
 				BE8C39DE1D3F042900008829 /* InitialViewController.xib in Resources */,
@@ -386,6 +399,7 @@
 				BE3A842F1D41C1990051CA7A /* PositionDataCollectionViewCell.xib in Resources */,
 				BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */,
 				BEBF9BD21D43366C003D3435 /* PerformanceChart.xib in Resources */,
+				BEAAAA451D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib in Resources */,
 				BE8C39721D3F023A00008829 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +464,7 @@
 				BE3A84321D41D63C0051CA7A /* CurrencyUtils.swift in Sources */,
 				BEBF9BD61D441937003D3435 /* ClosedTrade.swift in Sources */,
 				BEB6447D1D40223B00B0315D /* Trade.swift in Sources */,
+				BEAAAA471D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift in Sources */,
 				BE0E659F1D419DA20094C635 /* FirebaseAnalytics.swift in Sources */,
 				BE8C39C71D3F03C700008829 /* ViewController.swift in Sources */,
 				BEBF9BD41D43F8B8003D3435 /* Performance.swift in Sources */,
@@ -459,6 +474,7 @@
 				BE8C39C51D3F03C700008829 /* UIView+.swift in Sources */,
 				BEBF9BD01D43364A003D3435 /* PerformanceChart.swift in Sources */,
 				BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */,
+				BEAAAA441D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift in Sources */,
 				BE8C39DD1D3F042900008829 /* InitialViewController.swift in Sources */,
 				BE8C39F51D3F043700008829 /* ProfileHeaderView.swift in Sources */,
 				BE8C39C41D3F03C700008829 /* UIImage+.swift in Sources */,

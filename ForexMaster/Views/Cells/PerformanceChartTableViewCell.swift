@@ -85,7 +85,7 @@ public class PerformanceChartTableViewCell: UITableViewCell {
     
     public func updateChart() {
         guard let viewModel = viewModel else { return }
-        let trades = viewModel.performance.trades
+        let trades = viewModel.performance.closedTrades
         
         let dates = trades.map { (trade) -> NSTimeInterval in
             return trade.date.timeIntervalSince1970

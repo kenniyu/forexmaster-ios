@@ -125,7 +125,7 @@ public class PerformanceChart: UIView {
         
         var cumulativeProfits: [Double] = []
         
-        for trade in performance.trades {
+        for trade in performance.closedTrades {
             let date = trade.date.timeIntervalSince1970
             totalProfit += trade.profit
             if minDate > date {
@@ -146,7 +146,7 @@ public class PerformanceChart: UIView {
         
         var points: [CGPoint] = []
         
-        for (index, trade) in performance.trades.enumerate() {
+        for (index, trade) in performance.closedTrades.enumerate() {
             let currentProfit = cumulativeProfits[index]
             let profitPct = currentProfit/initialAccountBalance * 100
             
