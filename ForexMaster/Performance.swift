@@ -9,9 +9,9 @@
 import Foundation
 import ObjectMapper
 
+
 public class Performance: Mappable {
-    var date: NSDate!
-    var profit: Double!
+    var trades: [ClosedTrade] = []
     
     required public init?(_ map: Map) {
         
@@ -19,8 +19,7 @@ public class Performance: Mappable {
     
     // Mappable
     public func mapping(map: Map) {
-        profit        <- map["profit"]
-        date        <- (map["date"], DateTransform())
+        trades <- map["performance"]
     }
 }
 

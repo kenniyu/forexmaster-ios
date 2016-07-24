@@ -19,21 +19,30 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="5sm-ki-3q8">
-                                <rect key="frame" x="150" y="8" width="127" height="29"/>
+                                <rect key="frame" x="91" y="8" width="245" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="All Time"/>
-                                    <segment title="2016"/>
+                                    <segment title="Return (%)"/>
+                                    <segment title="Settled Profits ($)"/>
                                 </segments>
                                 <color key="tintColor" red="0.51200000000000001" green="0.754" blue="0.34300000000000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="tappedSegmentControl:" destination="KGk-i7-Jjw" eventType="valueChanged" id="dj0-tb-NlX"/>
+                                </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" id="djv-E5-o0u" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="44" width="411" height="202.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="containerView" destination="OkX-9y-ta4" id="oCA-7R-I2R"/>
+                <outlet property="containerView" destination="OkX-9y-ta4" id="adN-n4-tJB"/>
+                <outlet property="lineChartView" destination="djv-E5-o0u" id="mIK-oe-LRG"/>
                 <outlet property="segmentControl" destination="5sm-ki-3q8" id="PwS-kA-zSg"/>
             </connections>
             <point key="canvasLocation" x="370.5" y="357.5"/>

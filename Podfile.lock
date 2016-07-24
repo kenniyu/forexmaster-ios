@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.4.1)
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
   - Firebase/AdMob (3.3.0):
     - Firebase/Analytics (= 3.3.0)
     - Google-Mobile-Ads-SDK (= 7.8.1)
@@ -27,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - Charts
   - Firebase/AdMob
   - Firebase/Core
   - ObjectMapper (~> 1.1)
@@ -35,6 +39,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
   FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
   FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
@@ -46,6 +51,6 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SWXMLHash: 507397103325f140863d09040c04ae14a49a16cb
 
-PODFILE CHECKSUM: e4adb82918549c074fb989220ce1ecf042af5dc2
+PODFILE CHECKSUM: 933125de1439c508a4014fbbf4455217ddfde551
 
 COCOAPODS: 1.0.1

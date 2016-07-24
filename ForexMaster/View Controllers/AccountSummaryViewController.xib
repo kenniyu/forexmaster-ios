@@ -7,7 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountSummaryViewController" customModule="ForexMaster" customModuleProvider="target">
             <connections>
+                <outlet property="adBannerTopConstraint" destination="UzT-qb-Zw9" id="klO-Hu-pUi"/>
+                <outlet property="bannerView" destination="s8Z-eI-TKV" id="zER-a4-6mG"/>
                 <outlet property="tableView" destination="uby-V3-XLm" id="YPw-xu-GQg"/>
+                <outlet property="tableViewTopConstraint" destination="yAb-1p-fIT" id="rRp-xS-XOS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,12 +27,22 @@
                         <outlet property="delegate" destination="-1" id="eGm-JJ-ilH"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8Z-eI-TKV" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cFd-ml-F8J"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="uby-V3-XLm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="010-1P-ZCJ"/>
                 <constraint firstAttribute="bottom" secondItem="uby-V3-XLm" secondAttribute="bottom" id="313-Ce-X61"/>
+                <constraint firstAttribute="trailing" secondItem="s8Z-eI-TKV" secondAttribute="trailing" id="4bD-qY-Ddb"/>
                 <constraint firstAttribute="trailing" secondItem="uby-V3-XLm" secondAttribute="trailing" id="DhZ-DA-WTD"/>
+                <constraint firstItem="s8Z-eI-TKV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UzT-qb-Zw9"/>
+                <constraint firstItem="s8Z-eI-TKV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hY7-N1-Kub"/>
                 <constraint firstItem="uby-V3-XLm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yAb-1p-fIT"/>
             </constraints>
         </view>

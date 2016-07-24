@@ -9,11 +9,16 @@
 import UIKit
 import Alamofire
 import ObjectMapper
+import Firebase
 
 public class AccountSummaryViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var adBannerTopConstraint: NSLayoutConstraint!
     
-    public var performancesData: [Performance] = []
+    public var performanceData: Performance?
+    
     public override var navBarTitle: String {
         get {
             return "Performance"
@@ -24,13 +29,51 @@ public class AccountSummaryViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupAd()
     }
     
     public override func setup() {
         super.setup()
         registerCells()
         
+        setupTableView()
+    }
+    
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kPerformanceScreenPageView, parameters: [
+            "env": EnvironmentManager.sharedInstance.configuration
+            ])
         fetchData()
+    }
+    
+    public func setupAd() {
+        if ExperimentManager.sharedInstance.showAds {
+            bannerView.adUnitID = "ca-app-pub-9772342513376923/5943289897"
+            bannerView.rootViewController = self
+            
+            let request = GADRequest()
+            request.contentURL = "https://www.fxcm.com/insights/markets/"
+            request.testDevices = [kDFPSimulatorID, "ffe7748b1c0b67e1e502538e4e814a4228f5a25f"]
+            bannerView.loadRequest(request)
+        } else {
+            bannerView.hidden = true
+        }
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if ExperimentManager.sharedInstance.showAds {
+            adBannerTopConstraint.constant = topBarHeight()
+            tableViewTopConstraint.constant = bannerView.height
+        } else {
+            view.bringSubviewToFront(tableView)
+        }
+    }
+    
+    public func setupTableView() {
+        tableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
     public func fetchData() {
@@ -42,22 +85,13 @@ public class AccountSummaryViewController: BaseViewController {
             // Handle response here
             switch response.result {
             case .Success(let JSON):
-                guard let performances = JSON as? [[String: AnyObject]] else { return }
-                strongSelf.updatePerformances(performances)
+                guard let performanceJson = JSON as? [String: AnyObject] else { return }
+                strongSelf.performanceData = Mapper<Performance>().map(performanceJson)
+                strongSelf.tableView.reloadData()
             default:
                 break
             }
         }
-    }
-    
-    public func updatePerformances(performances: [[String: AnyObject]]) {
-        performancesData = []
-        for performancesJson in performances {
-            if let performance = Mapper<Performance>().map(performancesJson) {
-                performancesData.append(performance)
-            }
-        }
-        tableView.reloadData()
     }
     
     public func registerCells() {
@@ -67,7 +101,10 @@ public class AccountSummaryViewController: BaseViewController {
 
 extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return performancesData.count
+        if let performanceData = performanceData {
+            return 1
+        }
+        return 0
     }
     
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -78,9 +115,11 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCellWithIdentifier(PerformanceChartTableViewCell.kReuseIdentifier, forIndexPath: indexPath) as? PerformanceChartTableViewCell {
-                let viewModel = PerformanceChartTableViewCellModel(performance: performancesData[indexPath.row])
-                cell.setup(viewModel)
-                return cell
+                if let performanceData = performanceData {
+                    let viewModel = PerformanceChartTableViewCellModel(performance: performanceData)
+                    cell.setup(viewModel)
+                    return cell
+                }
             }
         default:
             break
