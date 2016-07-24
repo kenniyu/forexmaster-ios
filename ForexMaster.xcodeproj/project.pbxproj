@@ -51,6 +51,8 @@
 		BEAAAA451D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */; };
 		BEAAAA471D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAAA461D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift */; };
 		BEAAAA491D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAAAA481D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib */; };
+		BEAAAA4C1D45568A00A4DAB2 /* PushNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAAA4A1D45568A00A4DAB2 /* PushNotificationViewController.swift */; };
+		BEAAAA4D1D45568A00A4DAB2 /* PushNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAAAA4B1D45568A00A4DAB2 /* PushNotificationViewController.xib */; };
 		BEB644771D401ED400B0315D /* ExperimentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB644761D401ED400B0315D /* ExperimentManager.swift */; };
 		BEB6447A1D4021FC00B0315D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */; };
 		BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */; };
@@ -114,6 +116,8 @@
 		BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		BEAAAA461D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		BEAAAA481D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		BEAAAA4A1D45568A00A4DAB2 /* PushNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationViewController.swift; sourceTree = "<group>"; };
+		BEAAAA4B1D45568A00A4DAB2 /* PushNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushNotificationViewController.xib; sourceTree = "<group>"; };
 		BEB644761D401ED400B0315D /* ExperimentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentManager.swift; sourceTree = "<group>"; };
 		BEB644781D4021FC00B0315D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BEB644791D4021FC00B0315D /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				BE8C3A001D3F04C200008829 /* HistoryViewController.xib */,
 				BE3A84331D42869B0051CA7A /* AccountSummaryViewController.swift */,
 				BE3A84341D42869B0051CA7A /* AccountSummaryViewController.xib */,
+				BEAAAA4A1D45568A00A4DAB2 /* PushNotificationViewController.swift */,
+				BEAAAA4B1D45568A00A4DAB2 /* PushNotificationViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				BE8C39771D3F023A00008829 /* LaunchScreen.storyboard in Resources */,
 				BE757B4B1D3FF169002B64ED /* PositionSectionHeaderView.xib in Resources */,
 				BE8C39D61D3F042900008829 /* BaseViewController.xib in Resources */,
+				BEAAAA4D1D45568A00A4DAB2 /* PushNotificationViewController.xib in Resources */,
 				BEBF9BCE1D4335CC003D3435 /* PerformanceChartTableViewCell.xib in Resources */,
 				BEAAAA491D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib in Resources */,
 				BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */,
@@ -492,6 +499,7 @@
 				BE8C39FD1D3F047E00008829 /* PositionsViewController.swift in Sources */,
 				BE8C39D51D3F042900008829 /* BaseViewController.swift in Sources */,
 				BE8C39C31D3F03C700008829 /* UIButton+.swift in Sources */,
+				BEAAAA4C1D45568A00A4DAB2 /* PushNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PushNotificationViewController" customModule="ForexMaster" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmButton" destination="WIA-0z-FxA" id="Yle-n9-qpL"/>
+                <outlet property="modalView" destination="h87-Ry-vbU" id="T4X-7C-Uxg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h87-Ry-vbU">
+                    <rect key="frame" x="75" y="175" width="450" height="250"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ed-e4-oBr">
+                            <rect key="frame" x="0.0" y="10" width="450" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Notified!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRu-in-eBU">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="vdu-qE-HA1"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="vdu-qE-HA1"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="XRu-in-eBU" firstAttribute="top" secondItem="9Ed-e4-oBr" secondAttribute="top" id="8Gg-i1-Hpf"/>
+                                <constraint firstAttribute="trailing" secondItem="XRu-in-eBU" secondAttribute="trailing" id="GuA-eN-CGr"/>
+                                <constraint firstAttribute="height" constant="50" id="PzZ-dw-dKA"/>
+                                <constraint firstItem="XRu-in-eBU" firstAttribute="leading" secondItem="9Ed-e4-oBr" secondAttribute="leading" id="vGg-tZ-X7b"/>
+                                <constraint firstAttribute="bottom" secondItem="XRu-in-eBU" secondAttribute="bottom" id="vIt-Xf-8Ey"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow ForexBot to send you notifications when new trades are placed. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-He-Zl2">
+                            <rect key="frame" x="45.5" y="60" width="360" height="80"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBf-HY-Cdt">
+                            <rect key="frame" x="0.0" y="200" width="450" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Qr6-FU-jTV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                            <state key="normal" title="No thanks, another time">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="tappedCancelButton:" destination="-1" eventType="touchUpInside" id="BuU-dG-KrJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIA-0z-FxA">
+                            <rect key="frame" x="20" y="160" width="410" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="vzI-z4-hHe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="Let's do it!"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="vzI-z4-hHe"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="tappedConfirmButton:" destination="-1" eventType="touchUpInside" id="cfN-9J-e4k"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="WIA-0z-FxA" firstAttribute="leading" secondItem="h87-Ry-vbU" secondAttribute="leading" constant="20" id="1mh-af-NMj"/>
+                        <constraint firstItem="9Ed-e4-oBr" firstAttribute="top" secondItem="h87-Ry-vbU" secondAttribute="top" constant="10" id="5oR-Ue-mSr"/>
+                        <constraint firstItem="TBf-HY-Cdt" firstAttribute="leading" secondItem="h87-Ry-vbU" secondAttribute="leading" id="AVy-UA-gXN"/>
+                        <constraint firstItem="TBf-HY-Cdt" firstAttribute="height" secondItem="WIA-0z-FxA" secondAttribute="height" id="BHw-Mh-gYX"/>
+                        <constraint firstItem="TBf-HY-Cdt" firstAttribute="top" secondItem="WIA-0z-FxA" secondAttribute="bottom" id="BKj-aY-ErA"/>
+                        <constraint firstAttribute="height" constant="250" id="ML5-xY-23O"/>
+                        <constraint firstItem="9Ed-e4-oBr" firstAttribute="leading" secondItem="h87-Ry-vbU" secondAttribute="leading" id="MMq-YP-4Gw"/>
+                        <constraint firstItem="dVJ-He-Zl2" firstAttribute="centerX" secondItem="h87-Ry-vbU" secondAttribute="centerX" id="VG3-Dm-YFY"/>
+                        <constraint firstAttribute="trailing" secondItem="9Ed-e4-oBr" secondAttribute="trailing" id="bBx-5e-4FN"/>
+                        <constraint firstAttribute="trailing" secondItem="WIA-0z-FxA" secondAttribute="trailing" constant="20" id="fjY-i0-yUP"/>
+                        <constraint firstAttribute="trailing" secondItem="TBf-HY-Cdt" secondAttribute="trailing" id="mbJ-f9-zNN"/>
+                        <constraint firstAttribute="bottom" secondItem="TBf-HY-Cdt" secondAttribute="bottom" constant="10" id="nkC-SV-E8t"/>
+                        <constraint firstItem="dVJ-He-Zl2" firstAttribute="top" secondItem="9Ed-e4-oBr" secondAttribute="bottom" id="p6I-T7-Qgw"/>
+                        <constraint firstItem="WIA-0z-FxA" firstAttribute="top" secondItem="dVJ-He-Zl2" secondAttribute="bottom" constant="20" id="ukF-MF-ymQ"/>
+                        <constraint firstItem="dVJ-He-Zl2" firstAttribute="width" secondItem="h87-Ry-vbU" secondAttribute="width" multiplier="0.8" id="v5c-kZ-V8K"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="h87-Ry-vbU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="PEx-v4-EUn"/>
+                <constraint firstItem="h87-Ry-vbU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="S77-hU-y1w"/>
+                <constraint firstItem="h87-Ry-vbU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kaS-4h-Hro"/>
+                <constraint firstItem="h87-Ry-vbU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.75" id="zNW-Vi-Ai9"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="PEx-v4-EUn"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

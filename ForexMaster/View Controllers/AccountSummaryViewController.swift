@@ -37,6 +37,14 @@ public class AccountSummaryViewController: BaseViewController {
         registerCells()
         
         setupTableView()
+        
+        
+        let viewController = PushNotificationViewController()
+        viewController.pushNotificationViewControllerDelegate = self
+        viewController.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        viewController.modalPresentationStyle = .OverCurrentContext
+        viewController.modalTransitionStyle = .CrossDissolve
+        tabBarController?.presentViewController(viewController, animated: true, completion: nil)
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -171,5 +179,16 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
     
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return BaseTableViewHeaderFooterView.kHeight
+    }
+}
+
+extension AccountSummaryViewController: PushNotificationViewControllerDelegate {
+    public func didConfirmPushNotifications() {
+        // Push notifications
+        AppDelegate.registerForPushNotifications(UIApplication.sharedApplication())
+    }
+    
+    public func didRejectPushNotifications() {
+        print("Blah")
     }
 }

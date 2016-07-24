@@ -72,7 +72,7 @@ public class PerformanceChartTableViewCell: UITableViewCell {
         guard let performance = viewModel?.performance else { return }
 //        performanceChart?.setup(performance)//)
         
-        segmentControl.width = containerView.width - 100
+        segmentControl.width = containerView.width - 80
         segmentControl.height = PerformanceChartTableViewCell.kSegmentControlHeight
         segmentControl.top = PerformanceChartTableViewCell.kSegmentControlVerticalPadding
         segmentControl.center.x = containerView.center.x

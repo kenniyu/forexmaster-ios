@@ -29,9 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase
         FIRApp.configure()
         
-        // Push notifications
-        registerForPushNotifications(application)
-        
         return true
     }
     
@@ -121,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func registerForPushNotifications(application: UIApplication) {
+    class func registerForPushNotifications(application: UIApplication) {
         let notificationSettings = UIUserNotificationSettings(
             forTypes: [.Badge, .Sound, .Alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
