@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="adBannerTopConstraint" destination="UzT-qb-Zw9" id="klO-Hu-pUi"/>
                 <outlet property="bannerView" destination="s8Z-eI-TKV" id="zER-a4-6mG"/>
+                <outlet property="spinner" destination="KJN-Ee-Qdp" id="CdL-sL-46Z"/>
                 <outlet property="tableView" destination="uby-V3-XLm" id="YPw-xu-GQg"/>
                 <outlet property="tableViewTopConstraint" destination="yAb-1p-fIT" id="rRp-xS-XOS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -34,6 +35,9 @@
                         <constraint firstAttribute="height" constant="50" id="cFd-ml-F8J"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KJN-Ee-Qdp">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -41,8 +45,10 @@
                 <constraint firstAttribute="bottom" secondItem="uby-V3-XLm" secondAttribute="bottom" id="313-Ce-X61"/>
                 <constraint firstAttribute="trailing" secondItem="s8Z-eI-TKV" secondAttribute="trailing" id="4bD-qY-Ddb"/>
                 <constraint firstAttribute="trailing" secondItem="uby-V3-XLm" secondAttribute="trailing" id="DhZ-DA-WTD"/>
+                <constraint firstItem="KJN-Ee-Qdp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Uyu-Gg-u5k"/>
                 <constraint firstItem="s8Z-eI-TKV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UzT-qb-Zw9"/>
                 <constraint firstItem="s8Z-eI-TKV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hY7-N1-Kub"/>
+                <constraint firstItem="KJN-Ee-Qdp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rQg-lf-re4"/>
                 <constraint firstItem="uby-V3-XLm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yAb-1p-fIT"/>
             </constraints>
         </view>

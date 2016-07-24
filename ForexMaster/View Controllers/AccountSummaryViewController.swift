@@ -16,6 +16,7 @@ public class AccountSummaryViewController: BaseViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var adBannerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     public var performanceData: Performance?
     
@@ -38,13 +39,19 @@ public class AccountSummaryViewController: BaseViewController {
         
         setupTableView()
         
-        
-        let viewController = PushNotificationViewController()
-        viewController.pushNotificationViewControllerDelegate = self
-        viewController.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-        viewController.modalPresentationStyle = .OverCurrentContext
-        viewController.modalTransitionStyle = .CrossDissolve
-        tabBarController?.presentViewController(viewController, animated: true, completion: nil)
+        requestPushNotificationAccess()
+    }
+    
+    public func requestPushNotificationAccess() {
+        let hasViewedPushNotificationHint = NSUserDefaults.standardUserDefaults().boolForKey("pushHint")
+        if !hasViewedPushNotificationHint {
+            let viewController = PushNotificationViewController()
+            viewController.pushNotificationViewControllerDelegate = self
+            viewController.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            viewController.modalPresentationStyle = .OverCurrentContext
+            viewController.modalTransitionStyle = .CrossDissolve
+            tabBarController?.presentViewController(viewController, animated: true, completion: nil)
+        }
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -85,10 +92,12 @@ public class AccountSummaryViewController: BaseViewController {
     }
     
     public func fetchData() {
+        spinner.startAnimating()
         let baseUrl = NetworkManager.sharedInstance.baseUrl
         let request = Alamofire.request(.GET, "\(baseUrl)/performance.json", encoding: .JSON)
         request.responseJSON { [weak self] (response) in
             guard let strongSelf = self else { return }
+            strongSelf.spinner.stopAnimating()
             
             // Handle response here
             switch response.result {
@@ -186,9 +195,10 @@ extension AccountSummaryViewController: PushNotificationViewControllerDelegate {
     public func didConfirmPushNotifications() {
         // Push notifications
         AppDelegate.registerForPushNotifications(UIApplication.sharedApplication())
+        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "pushHint")
     }
     
     public func didRejectPushNotifications() {
-        print("Blah")
+        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "pushHint")
     }
 }
