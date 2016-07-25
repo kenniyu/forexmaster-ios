@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -28,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Firebase
         FIRApp.configure()
+        
+        if let _ = launchOptions {
+            FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kOpenedAppThroughPushNotification, parameters: nil)
+        }
         
         return true
     }
@@ -89,11 +92,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kAppEnteredBackground, parameters: nil)
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kAppEnteredForeground, parameters: nil)
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -108,14 +113,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(response)
             }
         }
+        
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kAppEnteredForeground, parameters: nil)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kAppDidBecomeActive, parameters: nil)
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kAppTerminated, parameters: nil)
     }
     
     class func registerForPushNotifications(application: UIApplication) {
@@ -143,7 +152,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set push token
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "pushToken")
         
-        print("Device Token:", tokenString)
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kRegisteredForPushNotification, parameters: nil)
+        
         let baseUrl = NetworkManager.sharedInstance.baseUrl
         let url = "\(baseUrl)/register_token/\(tokenString).json"
 
@@ -151,6 +161,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.responseJSON { (response) in
             print(response)
         }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kFailedRegisterForPushNotification, parameters: nil)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kReceivedPushNotification, parameters: nil)
     }
 }
 
