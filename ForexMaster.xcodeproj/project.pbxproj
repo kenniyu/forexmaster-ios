@@ -13,6 +13,8 @@
 		BE3A84321D41D63C0051CA7A /* CurrencyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */; };
 		BE3A84351D42869B0051CA7A /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A84331D42869B0051CA7A /* AccountSummaryViewController.swift */; };
 		BE3A84361D42869B0051CA7A /* AccountSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3A84341D42869B0051CA7A /* AccountSummaryViewController.xib */; };
+		BE3B30901D4668D200A1A109 /* HistoryTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B308F1D4668D200A1A109 /* HistoryTableHeaderView.swift */; };
+		BE3B30921D4668DF00A1A109 /* HistoryTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3B30911D4668DF00A1A109 /* HistoryTableHeaderView.xib */; };
 		BE5CF2A81D411CA500C072CB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CF2A71D411CA500C072CB /* NetworkManager.swift */; };
 		BE5CF2AB1D4125F900C072CB /* Environments.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5CF2AA1D4125F900C072CB /* Environments.plist */; };
 		BE5CF2AD1D41263300C072CB /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CF2AC1D41263300C072CB /* EnvironmentManager.swift */; };
@@ -76,6 +78,8 @@
 		BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyUtils.swift; sourceTree = "<group>"; };
 		BE3A84331D42869B0051CA7A /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		BE3A84341D42869B0051CA7A /* AccountSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSummaryViewController.xib; sourceTree = "<group>"; };
+		BE3B308F1D4668D200A1A109 /* HistoryTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableHeaderView.swift; sourceTree = "<group>"; };
+		BE3B30911D4668DF00A1A109 /* HistoryTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableHeaderView.xib; sourceTree = "<group>"; };
 		BE5CF2A71D411CA500C072CB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BE5CF2AA1D4125F900C072CB /* Environments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environments.plist; path = Resources/Environments.plist; sourceTree = "<group>"; };
 		BE5CF2AC1D41263300C072CB /* EnvironmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */,
 				BEAAAA461D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift */,
 				BEAAAA481D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib */,
+				BE3B308F1D4668D200A1A109 /* HistoryTableHeaderView.swift */,
+				BE3B30911D4668DF00A1A109 /* HistoryTableHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */,
 				BE8C39F61D3F043700008829 /* ProfileHeaderView.xib in Resources */,
 				BE8C39DE1D3F042900008829 /* InitialViewController.xib in Resources */,
+				BE3B30921D4668DF00A1A109 /* HistoryTableHeaderView.xib in Resources */,
 				BE3A84361D42869B0051CA7A /* AccountSummaryViewController.xib in Resources */,
 				BE8C39741D3F023A00008829 /* Assets.xcassets in Resources */,
 				BE757B471D3FDEE6002B64ED /* PositionTableViewCell.xib in Resources */,
@@ -500,6 +507,7 @@
 				BE8C39D51D3F042900008829 /* BaseViewController.swift in Sources */,
 				BE8C39C31D3F03C700008829 /* UIButton+.swift in Sources */,
 				BEAAAA4C1D45568A00A4DAB2 /* PushNotificationViewController.swift in Sources */,
+				BE3B30901D4668D200A1A109 /* HistoryTableHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

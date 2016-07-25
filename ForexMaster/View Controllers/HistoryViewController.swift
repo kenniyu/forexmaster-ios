@@ -20,6 +20,8 @@ public class HistoryViewController: BaseViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     public var tradesData: [Trade] = []
+    public var filteredTradesData: [Trade] = []
+    public var historyFilter: HistoryFilter = .All
     
     public override var navBarTitle: String {
         get {
@@ -27,9 +29,18 @@ public class HistoryViewController: BaseViewController {
         }
     }
     
+    public func setupTableView() {
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        let tableHeaderView = HistoryTableHeaderView(frame: CGRectMake(0, 0, tableView.width, HistoryTableHeaderView.kHeight))
+        tableHeaderView.setup()
+        tableHeaderView.historyTableHeaderViewDelegate = self
+        tableView.tableHeaderView = tableHeaderView
+    }
+    
     public override func setupStyles() {
         super.setupStyles()
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+        setupTableView()
     }
     
     
@@ -104,13 +115,29 @@ public class HistoryViewController: BaseViewController {
                 tradesData.append(trade)
             }
         }
+        
+        // filter
+        filterTrades()
         tableView.reloadData()
+    }
+    
+    public func filterTrades() {
+        filteredTradesData = []
+        for tradeData in tradesData {
+            if historyFilter == .All {
+                filteredTradesData.append(tradeData)
+            } else {
+                if tradeData.status == historyFilter.rawValue {
+                    filteredTradesData.append(tradeData)
+                }
+            }
+        }
     }
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tradesData.count
+        return filteredTradesData.count
     }
     
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -119,7 +146,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier(HistoryTableViewCell.kReuseIdentifier, forIndexPath: indexPath) as? HistoryTableViewCell {
-            let viewModel = HistoryTableViewCellModel(trade: tradesData[indexPath.row])
+            let viewModel = HistoryTableViewCellModel(trade: filteredTradesData[indexPath.row])
             cell.setup(viewModel)
             return cell
         }
@@ -128,5 +155,13 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return HistoryTableViewCell.kCellHeight
+    }
+}
+
+extension HistoryViewController: HistoryTableHeaderViewDelegate {
+    public func didChangeSegment(historyFilter: HistoryFilter) {
+        self.historyFilter = historyFilter
+        filterTrades()
+        tableView.reloadData()
     }
 }

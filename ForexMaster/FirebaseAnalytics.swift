@@ -21,5 +21,6 @@ public struct FirebaseAnalytics {
         public static let kAppDidBecomeActive = "app_active"
         public static let kAppEnteredForeground = "app_entered_foreground"
         public static let kAppEnteredBackground = "app_entered_background"
+        public static let kFilteredHistory = "filtered_history"
     }
 }

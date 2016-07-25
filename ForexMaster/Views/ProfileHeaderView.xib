@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileHeaderView" customModule="LittleFormosa" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileHeaderView" customModule="ForexMaster" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="N87-XT-oS5" id="bqn-N3-LR3"/>
                 <outlet property="headlineLabel" destination="885-yf-CdQ" id="2O6-4r-qCC"/>

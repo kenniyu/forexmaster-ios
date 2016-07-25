@@ -52,9 +52,26 @@ public class HistoryTableViewCell: UITableViewCell {
         let trade = viewModel.trade
         let size = trade.size
         let sizeStr = size > 0 ? "+\(size)" : "\(size)"
+        let status = getTradeStatus(viewModel)
         
-        let text = "\(sizeStr) \(trade.pair) @\(trade.mark)"
+        let text = "\(sizeStr) \(trade.pair) @\(trade.mark) (\(status))"
         return text
+    }
+    
+    public func getTradeStatus(viewModel: HistoryTableViewCellModel) -> String {
+        let trade = viewModel.trade
+        let status = trade.status
+        
+        switch status {
+        case 0:
+            return "Open"
+        case 1:
+            return "Adjust"
+        case 2:
+            return "Close"
+        default:
+            return ""
+        }
     }
     
     public func getTradeDate(viewModel: HistoryTableViewCellModel) -> String {

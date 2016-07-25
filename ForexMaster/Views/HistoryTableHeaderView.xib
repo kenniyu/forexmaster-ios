@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryTableHeaderView" customModule="ForexMaster" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="U9o-eI-MUQ" id="hoH-Eb-mgb"/>
+                <outlet property="segmentControl" destination="D7S-nJ-5Jd" id="STx-Ri-Onh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="zLf-Mf-H8Z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9o-eI-MUQ">
+                    <rect key="frame" x="0.0" y="0.0" width="336" height="50"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D7S-nJ-5Jd">
+                            <rect key="frame" x="10" y="10" width="316" height="31"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="Opening"/>
+                                <segment title="Adjustment"/>
+                                <segment title="Closing"/>
+                            </segments>
+                            <connections>
+                                <action selector="changedSegment:" destination="-1" eventType="valueChanged" id="zyq-GL-2qg"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="D7S-nJ-5Jd" firstAttribute="leading" secondItem="U9o-eI-MUQ" secondAttribute="leading" constant="10" id="EIR-ch-CH4"/>
+                        <constraint firstItem="D7S-nJ-5Jd" firstAttribute="top" secondItem="U9o-eI-MUQ" secondAttribute="top" constant="10" id="I9J-T1-S6M"/>
+                        <constraint firstAttribute="trailing" secondItem="D7S-nJ-5Jd" secondAttribute="trailing" constant="10" id="KkP-Ka-do4"/>
+                        <constraint firstAttribute="bottom" secondItem="D7S-nJ-5Jd" secondAttribute="bottom" constant="10" id="LeC-3L-V3B"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="U9o-eI-MUQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CRZ-f3-t00"/>
+                <constraint firstItem="U9o-eI-MUQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dgi-rJ-8cB"/>
+                <constraint firstAttribute="trailing" secondItem="U9o-eI-MUQ" secondAttribute="trailing" id="mbx-MZ-iiv"/>
+                <constraint firstAttribute="bottom" secondItem="U9o-eI-MUQ" secondAttribute="bottom" id="y69-vY-lJY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="259" y="59.5"/>
+        </view>
+    </objects>
+</document>

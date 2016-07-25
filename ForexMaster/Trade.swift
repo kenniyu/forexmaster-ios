@@ -14,6 +14,7 @@ public class Trade: Mappable {
     var size: Int!
     var mark: String!
     var date: NSDate!
+    var status: Int!
     
     required public init?(_ map: Map) {
         
@@ -24,6 +25,7 @@ public class Trade: Mappable {
         pair        <- map["pair"]
         size        <- map["size"]
         mark        <- map["mark"]
+        status        <- map["status"]
         date        <- (map["date"], DateTransform())
     }
 }
