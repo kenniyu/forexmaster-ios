@@ -71,6 +71,12 @@
 		BEBF9BD21D43366C003D3435 /* PerformanceChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */; };
 		BEBF9BD41D43F8B8003D3435 /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF9BD31D43F8B8003D3435 /* Performance.swift */; };
 		BEBF9BD61D441937003D3435 /* ClosedTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF9BD51D441937003D3435 /* ClosedTrade.swift */; };
+		BEDE03141D47C02D00E6FC5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE03121D47C02C00E6FC5E /* SettingsViewController.swift */; };
+		BEDE03151D47C02D00E6FC5E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE03131D47C02C00E6FC5E /* SettingsViewController.xib */; };
+		BEDE03181D47C09A00E6FC5E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE03161D47C09A00E6FC5E /* SettingsTableViewCell.swift */; };
+		BEDE03191D47C09A00E6FC5E /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE03171D47C09A00E6FC5E /* SettingsTableViewCell.xib */; };
+		BEDE031C1D47D95500E6FC5E /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE031A1D47D95500E6FC5E /* LegalViewController.swift */; };
+		BEDE031D1D47D95500E6FC5E /* LegalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE031B1D47D95500E6FC5E /* LegalViewController.xib */; };
 		BEF927DB1D401258009AC0AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEF927DA1D401258009AC0AF /* GoogleService-Info.plist */; };
 		D0F7E05B52C8F46AA008EA9F /* Pods_ForexMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2255CAD087EBBB0DD974E50 /* Pods_ForexMaster.framework */; };
 /* End PBXBuildFile section */
@@ -144,6 +150,12 @@
 		BEBF9BD11D43366C003D3435 /* PerformanceChart.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerformanceChart.xib; sourceTree = "<group>"; };
 		BEBF9BD31D43F8B8003D3435 /* Performance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Performance.swift; sourceTree = "<group>"; };
 		BEBF9BD51D441937003D3435 /* ClosedTrade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedTrade.swift; sourceTree = "<group>"; };
+		BEDE03121D47C02C00E6FC5E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BEDE03131D47C02C00E6FC5E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		BEDE03161D47C09A00E6FC5E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		BEDE03171D47C09A00E6FC5E /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		BEDE031A1D47D95500E6FC5E /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		BEDE031B1D47D95500E6FC5E /* LegalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegalViewController.xib; sourceTree = "<group>"; };
 		BEF927DA1D401258009AC0AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEF927DC1D4013AC009AC0AF /* ForexMaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForexMaster-Bridging-Header.h"; sourceTree = "<group>"; };
 		D333A1A9161ACA2A2B96B457 /* Pods-ForexMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexMaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForexMaster/Pods-ForexMaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +312,10 @@
 				BE3A84341D42869B0051CA7A /* AccountSummaryViewController.xib */,
 				BE32E2871D46B699008F1D4B /* NotificationViewController.swift */,
 				BE32E2881D46B699008F1D4B /* NotificationViewController.xib */,
+				BEDE03121D47C02C00E6FC5E /* SettingsViewController.swift */,
+				BEDE03131D47C02C00E6FC5E /* SettingsViewController.xib */,
+				BEDE031A1D47D95500E6FC5E /* LegalViewController.swift */,
+				BEDE031B1D47D95500E6FC5E /* LegalViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -337,6 +353,8 @@
 				BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */,
 				BE32E28C1D46B778008F1D4B /* MessageTableViewCell.swift */,
 				BE32E28D1D46B778008F1D4B /* MessageTableViewCell.xib */,
+				BEDE03161D47C09A00E6FC5E /* SettingsTableViewCell.swift */,
+				BEDE03171D47C09A00E6FC5E /* SettingsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -422,6 +440,7 @@
 				BE757B4B1D3FF169002B64ED /* PositionSectionHeaderView.xib in Resources */,
 				BE8C39D61D3F042900008829 /* BaseViewController.xib in Resources */,
 				BEAAAA4D1D45568A00A4DAB2 /* PushNotificationViewController.xib in Resources */,
+				BEDE031D1D47D95500E6FC5E /* LegalViewController.xib in Resources */,
 				BEBF9BCE1D4335CC003D3435 /* PerformanceChartTableViewCell.xib in Resources */,
 				BEAAAA491D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib in Resources */,
 				BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */,
@@ -430,7 +449,9 @@
 				BE8C39DE1D3F042900008829 /* InitialViewController.xib in Resources */,
 				BE3B30921D4668DF00A1A109 /* HistoryTableHeaderView.xib in Resources */,
 				BE3A84361D42869B0051CA7A /* AccountSummaryViewController.xib in Resources */,
+				BEDE03191D47C09A00E6FC5E /* SettingsTableViewCell.xib in Resources */,
 				BE8C39741D3F023A00008829 /* Assets.xcassets in Resources */,
+				BEDE03151D47C02D00E6FC5E /* SettingsViewController.xib in Resources */,
 				BE757B471D3FDEE6002B64ED /* PositionTableViewCell.xib in Resources */,
 				BE5CF2AB1D4125F900C072CB /* Environments.plist in Resources */,
 				BEF927DB1D401258009AC0AF /* GoogleService-Info.plist in Resources */,
@@ -517,6 +538,7 @@
 				BE8C39C51D3F03C700008829 /* UIView+.swift in Sources */,
 				BEBF9BD01D43364A003D3435 /* PerformanceChart.swift in Sources */,
 				BE32E2891D46B699008F1D4B /* NotificationViewController.swift in Sources */,
+				BEDE031C1D47D95500E6FC5E /* LegalViewController.swift in Sources */,
 				BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */,
 				BEAAAA441D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift in Sources */,
 				BE8C39DD1D3F042900008829 /* InitialViewController.swift in Sources */,
@@ -524,6 +546,7 @@
 				BE8C39C41D3F03C700008829 /* UIImage+.swift in Sources */,
 				BEB6447A1D4021FC00B0315D /* HistoryTableViewCell.swift in Sources */,
 				BE5CF2AD1D41263300C072CB /* EnvironmentManager.swift in Sources */,
+				BEDE03141D47C02D00E6FC5E /* SettingsViewController.swift in Sources */,
 				BE32E2931D46B90C008F1D4B /* TextUtils.swift in Sources */,
 				BE8C39D91D3F042900008829 /* FilterViewController.swift in Sources */,
 				BE8C39C61D3F03C700008829 /* UIViewController+.swift in Sources */,
@@ -533,6 +556,7 @@
 				BEBF9BCD1D4335CC003D3435 /* PerformanceChartTableViewCell.swift in Sources */,
 				BE8C3A011D3F04C200008829 /* HistoryViewController.swift in Sources */,
 				BE32E28E1D46B778008F1D4B /* MessageTableViewCell.swift in Sources */,
+				BEDE03181D47C09A00E6FC5E /* SettingsTableViewCell.swift in Sources */,
 				BE8C39FA1D3F045500008829 /* MainTabBarController.swift in Sources */,
 				BE8C396D1D3F023A00008829 /* AppDelegate.swift in Sources */,
 				BE8C39FD1D3F047E00008829 /* PositionsViewController.swift in Sources */,

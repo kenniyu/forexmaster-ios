@@ -23,7 +23,7 @@ class BaseTableViewHeaderFooterView: UITableViewHeaderFooterView {
     
     public class var kSectionHeaderFont: UIFont? {
         get {
-            return Styles.Fonts.avenirBookFontWithSize(16)
+            return Styles.Fonts.avenirBookFontWithSize(12)
         }
     }
     
@@ -39,9 +39,15 @@ class BaseTableViewHeaderFooterView: UITableViewHeaderFooterView {
         }
     }
     
-    public class var kHeight: CGFloat {
+    public class var kHeaderHeight: CGFloat {
         get {
-            return 50
+            return 40
+        }
+    }
+    
+    public class var kFooterHeight: CGFloat {
+        get {
+            return kHeaderHeight/3
         }
     }
     
@@ -75,14 +81,14 @@ class BaseTableViewHeaderFooterView: UITableViewHeaderFooterView {
     }
     
     public func setTitle(text: String) {
-        titleLabel.text = text
+        titleLabel.text = text.uppercaseString
     }
     
     public func setup(title: String) {
         titleLabel.font = BaseTableViewHeaderFooterView.kSectionHeaderFont
         
         titleLabel.textColor = Styles.Colors.Black
-        view.backgroundColor = Styles.Colors.LightGray.colorWithAlphaComponent(0.1)
+        view.backgroundColor = Styles.Colors.White
         setTitle(title)
     }
 }

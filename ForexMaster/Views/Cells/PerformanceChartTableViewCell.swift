@@ -149,9 +149,14 @@ public class PerformanceChartTableViewCell: UITableViewCell {
         
         backgroundColor = UIColor.clearColor()
         contentView.backgroundColor = backgroundColor
-        containerView.backgroundColor = Styles.Colors.White
+        containerView.backgroundColor = Styles.Colors.LighterGray
         
         segmentControl.tintColor = Styles.Colors.Green
+
+        lineChartView.backgroundColor = Styles.Colors.LighterGray
+        lineChartView.gridBackgroundColor = Styles.Colors.LighterGray
+        lineChartView.drawGridBackgroundEnabled = true
+        
         lineChartView.pinchZoomEnabled = false
         lineChartView.dragEnabled = false
         lineChartView.descriptionText = ""

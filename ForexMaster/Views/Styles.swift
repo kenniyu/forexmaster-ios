@@ -14,6 +14,7 @@ public class Styles {
         static let Blue = UIColor(red: 42/255.0, green: 133/255.0, blue: 245/255.0, alpha: 1.0)
         static let Red = UIColor(red: 255.0/255.0, green: 53.0/255.0, blue: 46.0/255.0, alpha: 1.0)
         static let LightGray = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+        static let LighterGray = UIColor(red: 248/255.0, green: 248/255.0, blue: 248/255.0, alpha: 1.0)
         static let Gray = UIColor(red: 120/255.0, green: 120/255.0, blue: 120/255.0, alpha: 1.0)
         static let Black = UIColor(red: 30/255.0, green: 30/255.0, blue: 30/255.0, alpha: 1.0)
         

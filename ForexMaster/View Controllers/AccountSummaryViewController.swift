@@ -186,8 +186,23 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
         return UIView()
     }
     
+    public func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(BaseTableViewHeaderFooterView.kReuseIdentifier) as? BaseTableViewHeaderFooterView {
+            headerView.setup("")
+            return headerView
+        }
+        return UIView()
+    }
+    
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return BaseTableViewHeaderFooterView.kHeight
+        return BaseTableViewHeaderFooterView.kHeaderHeight
+    }
+    
+    public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 1 {
+            return 0
+        }
+        return BaseTableViewHeaderFooterView.kFooterHeight
     }
 }
 

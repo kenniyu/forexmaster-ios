@@ -58,7 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         historyNavigationViewController.tabBarItem.image = UIImage(named: "history.png")
         historyNavigationViewController.title = "History"
         
-        let tabBarControllers = [accountSummaryNavigationViewController, positionsNavigationViewController, notificationNavigationViewController, historyNavigationViewController]
+        let settingsViewController = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
+        let settingsNavigationViewController = UINavigationController(rootViewController: settingsViewController)
+        settingsNavigationViewController.tabBarItem.image = UIImage(named: "settings.png")
+        settingsNavigationViewController.title = "Settings"
+        
+        let tabBarControllers = [accountSummaryNavigationViewController, positionsNavigationViewController, notificationNavigationViewController, historyNavigationViewController, settingsNavigationViewController]
         
         let mainTabBarController = MainTabBarController()
         mainTabBarController.viewControllers = tabBarControllers
@@ -156,6 +161,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set push token
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "pushToken")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "allowNotifications")
         
         FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kRegisteredForPushNotification, parameters: nil)
         

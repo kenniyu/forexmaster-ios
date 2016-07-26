@@ -14,6 +14,7 @@ public struct FirebaseAnalytics {
         public static let kHistoryScreenPageView = "history_screen_pv"
         public static let kNotificationScreenPageView = "notification_screen_pv"
         public static let kPerformanceScreenPageView = "performance_screen_pv"
+        public static let kSettingsScreenPageView = "settings_screen_pv"
         public static let kOpenedAppThroughPushNotification = "app_opened_via_push_notification"
         public static let kReceivedPushNotification = "app_received_push_notification"
         public static let kRegisteredForPushNotification = "register_push_notification_success"

@@ -80,7 +80,7 @@ public class AccountSummaryTableViewCell: UITableViewCell {
         
         backgroundColor = UIColor.clearColor()
         contentView.backgroundColor = backgroundColor
-        containerView.backgroundColor = Styles.Colors.White
+        containerView.backgroundColor = Styles.Colors.LighterGray
         
         inceptionDateLabel.textColor = Styles.Colors.Black
         initialBalanceLabel.textColor = Styles.Colors.Green

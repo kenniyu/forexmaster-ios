@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ForexMaster/AppDelegate.swift"
-            timestampString = "491174532.39082"
+            timestampString = "491242690.099621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
-            timestampString = "491203106.101506"
+            timestampString = "491247516.284835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "tappedSegmentControl(_:)"
             landmarkType = "5">
             <Locations>
@@ -58,11 +58,11 @@
                   moduleName = "ForexMaster"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
-                  timestampString = "491196896.410848"
+                  timestampString = "491247890.101977"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
+                  startingLineNumber = "194"
+                  endingLineNumber = "194"
                   offsetFromSymbolStart = "114">
                </Location>
                <Location
@@ -73,11 +73,11 @@
                   moduleName = "ForexMaster"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
-                  timestampString = "491196896.411021"
+                  timestampString = "491247890.102129"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
+                  startingLineNumber = "194"
+                  endingLineNumber = "194"
                   offsetFromSymbolStart = "133">
                </Location>
             </Locations>
@@ -97,86 +97,6 @@
             endingLineNumber = "140"
             landmarkName = "size(_:viewModel:constrainedWidthAdjustment:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static ForexMaster.MessageTableViewCell.size (CoreGraphics.CGFloat, viewModel : ForexMaster.MessageTableViewCellModel, constrainedWidthAdjustment : CoreGraphics.CGFloat) -&gt; __C.CGSize"
-                  moduleName = "ForexMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/Views/Cells/MessageTableViewCell.swift"
-                  timestampString = "491196896.412557"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static ForexMaster.MessageTableViewCell.size (CoreGraphics.CGFloat, viewModel : ForexMaster.MessageTableViewCellModel, constrainedWidthAdjustment : CoreGraphics.CGFloat) -&gt; __C.CGSize"
-                  moduleName = "ForexMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/Views/Cells/MessageTableViewCell.swift"
-                  timestampString = "491196896.412797"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "574">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ForexMaster/View Controllers/NotificationViewController.swift"
-            timestampString = "491196841.35738"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "fetchMessages()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ForexMaster.NotificationViewController.(fetchMessages () -&gt; ()).(closure #1)"
-                  moduleName = "ForexMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/View%20Controllers/NotificationViewController.swift"
-                  timestampString = "491196896.413578"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "347">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ForexMaster.NotificationViewController.(fetchMessages () -&gt; ()).(closure #1)"
-                  moduleName = "ForexMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/View%20Controllers/NotificationViewController.swift"
-                  timestampString = "491196896.413676"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "435">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
