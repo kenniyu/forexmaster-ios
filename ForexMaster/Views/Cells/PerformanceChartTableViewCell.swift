@@ -99,11 +99,17 @@ public class PerformanceChartTableViewCell: UITableViewCell {
         for trade in trades {
             cumulativeProfits += trade.profit
             if chartMode == .Return {
-                yData.append(100 * cumulativeProfits/initialProfits)
+                let percentReturn = 100 * cumulativeProfits/initialProfits
+                yData.append(percentReturn)
             } else {
                 yData.append(cumulativeProfits)
             }
-            
+        }
+        
+        if chartMode == .Return {
+            lineChartView.leftAxis.axisMaxValue = 2 * 100 * (cumulativeProfits/initialProfits)
+        } else {
+            lineChartView.leftAxis.axisMaxValue = 2 * cumulativeProfits
         }
         
         var dataEntries: [ChartDataEntry] = []
@@ -167,8 +173,9 @@ public class PerformanceChartTableViewCell: UITableViewCell {
         }
         
         lineChartView.leftAxis.axisMinValue = 0
-        lineChartView.drawBordersEnabled = false
         lineChartView.leftAxis.minWidth = 30
+        
+        lineChartView.drawBordersEnabled = false
     }
     
     @IBAction func tappedSegmentControl(sender: UISegmentedControl) {

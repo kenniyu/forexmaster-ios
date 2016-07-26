@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BE0E659F1D419DA20094C635 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E659E1D419DA20094C635 /* FirebaseAnalytics.swift */; };
+		BE32E2891D46B699008F1D4B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32E2871D46B699008F1D4B /* NotificationViewController.swift */; };
+		BE32E28A1D46B699008F1D4B /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32E2881D46B699008F1D4B /* NotificationViewController.xib */; };
+		BE32E28E1D46B778008F1D4B /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32E28C1D46B778008F1D4B /* MessageTableViewCell.swift */; };
+		BE32E28F1D46B778008F1D4B /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32E28D1D46B778008F1D4B /* MessageTableViewCell.xib */; };
+		BE32E2911D46B7F6008F1D4B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32E2901D46B7F6008F1D4B /* Message.swift */; };
+		BE32E2931D46B90C008F1D4B /* TextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32E2921D46B90C008F1D4B /* TextUtils.swift */; };
 		BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A842C1D41C1990051CA7A /* PositionDataCollectionViewCell.swift */; };
 		BE3A842F1D41C1990051CA7A /* PositionDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */; };
 		BE3A84321D41D63C0051CA7A /* CurrencyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */; };
@@ -73,6 +79,12 @@
 		5887E52CFDBB8CE7F524FE70 /* Pods-ForexMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForexMaster/Pods-ForexMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		A2255CAD087EBBB0DD974E50 /* Pods_ForexMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForexMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0E659E1D419DA20094C635 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		BE32E2871D46B699008F1D4B /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		BE32E2881D46B699008F1D4B /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		BE32E28C1D46B778008F1D4B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		BE32E28D1D46B778008F1D4B /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		BE32E2901D46B7F6008F1D4B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BE32E2921D46B90C008F1D4B /* TextUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextUtils.swift; sourceTree = "<group>"; };
 		BE3A842C1D41C1990051CA7A /* PositionDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE3A842D1D41C1990051CA7A /* PositionDataCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionDataCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyUtils.swift; sourceTree = "<group>"; };
@@ -176,10 +188,20 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		BE32E28B1D46B6AE008F1D4B /* Overlays */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAAA4A1D45568A00A4DAB2 /* PushNotificationViewController.swift */,
+				BEAAAA4B1D45568A00A4DAB2 /* PushNotificationViewController.xib */,
+			);
+			name = Overlays;
+			sourceTree = "<group>";
+		};
 		BE3A84301D41D6300051CA7A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				BE3A84311D41D63C0051CA7A /* CurrencyUtils.swift */,
+				BE32E2921D46B90C008F1D4B /* TextUtils.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +221,7 @@
 				BEB6447C1D40223B00B0315D /* Trade.swift */,
 				BEBF9BD31D43F8B8003D3435 /* Performance.swift */,
 				BEBF9BD51D441937003D3435 /* ClosedTrade.swift */,
+				BE32E2901D46B7F6008F1D4B /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -260,6 +283,7 @@
 		BE8C39C81D3F042900008829 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE32E28B1D46B6AE008F1D4B /* Overlays */,
 				BE8C39C91D3F042900008829 /* BaseViewController.swift */,
 				BE8C39CA1D3F042900008829 /* BaseViewController.xib */,
 				BE8C39CD1D3F042900008829 /* FilterViewController.swift */,
@@ -274,8 +298,8 @@
 				BE8C3A001D3F04C200008829 /* HistoryViewController.xib */,
 				BE3A84331D42869B0051CA7A /* AccountSummaryViewController.swift */,
 				BE3A84341D42869B0051CA7A /* AccountSummaryViewController.xib */,
-				BEAAAA4A1D45568A00A4DAB2 /* PushNotificationViewController.swift */,
-				BEAAAA4B1D45568A00A4DAB2 /* PushNotificationViewController.xib */,
+				BE32E2871D46B699008F1D4B /* NotificationViewController.swift */,
+				BE32E2881D46B699008F1D4B /* NotificationViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -311,6 +335,8 @@
 				BEBF9BCC1D4335CC003D3435 /* PerformanceChartTableViewCell.xib */,
 				BEAAAA421D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift */,
 				BEAAAA431D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib */,
+				BE32E28C1D46B778008F1D4B /* MessageTableViewCell.swift */,
+				BE32E28D1D46B778008F1D4B /* MessageTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -399,6 +425,7 @@
 				BEBF9BCE1D4335CC003D3435 /* PerformanceChartTableViewCell.xib in Resources */,
 				BEAAAA491D44A94000A4DAB2 /* BaseTableViewHeaderFooterView.xib in Resources */,
 				BE8C39FE1D3F047E00008829 /* PositionsViewController.xib in Resources */,
+				BE32E28F1D46B778008F1D4B /* MessageTableViewCell.xib in Resources */,
 				BE8C39F61D3F043700008829 /* ProfileHeaderView.xib in Resources */,
 				BE8C39DE1D3F042900008829 /* InitialViewController.xib in Resources */,
 				BE3B30921D4668DF00A1A109 /* HistoryTableHeaderView.xib in Resources */,
@@ -413,6 +440,7 @@
 				BE3A842F1D41C1990051CA7A /* PositionDataCollectionViewCell.xib in Resources */,
 				BEB6447B1D4021FC00B0315D /* HistoryTableViewCell.xib in Resources */,
 				BEBF9BD21D43366C003D3435 /* PerformanceChart.xib in Resources */,
+				BE32E28A1D46B699008F1D4B /* NotificationViewController.xib in Resources */,
 				BEAAAA451D4473C000A4DAB2 /* AccountSummaryTableViewCell.xib in Resources */,
 				BE8C39721D3F023A00008829 /* Main.storyboard in Resources */,
 			);
@@ -480,6 +508,7 @@
 				BEB6447D1D40223B00B0315D /* Trade.swift in Sources */,
 				BEAAAA471D44A92900A4DAB2 /* BaseTableViewHeaderFooterView.swift in Sources */,
 				BE0E659F1D419DA20094C635 /* FirebaseAnalytics.swift in Sources */,
+				BE32E2911D46B7F6008F1D4B /* Message.swift in Sources */,
 				BE8C39C71D3F03C700008829 /* ViewController.swift in Sources */,
 				BEBF9BD41D43F8B8003D3435 /* Performance.swift in Sources */,
 				BE5CF2A81D411CA500C072CB /* NetworkManager.swift in Sources */,
@@ -487,6 +516,7 @@
 				BE3A84351D42869B0051CA7A /* AccountSummaryViewController.swift in Sources */,
 				BE8C39C51D3F03C700008829 /* UIView+.swift in Sources */,
 				BEBF9BD01D43364A003D3435 /* PerformanceChart.swift in Sources */,
+				BE32E2891D46B699008F1D4B /* NotificationViewController.swift in Sources */,
 				BE3A842E1D41C1990051CA7A /* PositionDataCollectionViewCell.swift in Sources */,
 				BEAAAA441D4473C000A4DAB2 /* AccountSummaryTableViewCell.swift in Sources */,
 				BE8C39DD1D3F042900008829 /* InitialViewController.swift in Sources */,
@@ -494,6 +524,7 @@
 				BE8C39C41D3F03C700008829 /* UIImage+.swift in Sources */,
 				BEB6447A1D4021FC00B0315D /* HistoryTableViewCell.swift in Sources */,
 				BE5CF2AD1D41263300C072CB /* EnvironmentManager.swift in Sources */,
+				BE32E2931D46B90C008F1D4B /* TextUtils.swift in Sources */,
 				BE8C39D91D3F042900008829 /* FilterViewController.swift in Sources */,
 				BE8C39C61D3F03C700008829 /* UIViewController+.swift in Sources */,
 				BE8C39F81D3F044200008829 /* Styles.swift in Sources */,
@@ -501,6 +532,7 @@
 				BE8C39DB1D3F042900008829 /* HomeViewController.swift in Sources */,
 				BEBF9BCD1D4335CC003D3435 /* PerformanceChartTableViewCell.swift in Sources */,
 				BE8C3A011D3F04C200008829 /* HistoryViewController.swift in Sources */,
+				BE32E28E1D46B778008F1D4B /* MessageTableViewCell.swift in Sources */,
 				BE8C39FA1D3F045500008829 /* MainTabBarController.swift in Sources */,
 				BE8C396D1D3F023A00008829 /* AppDelegate.swift in Sources */,
 				BE8C39FD1D3F047E00008829 /* PositionsViewController.swift in Sources */,

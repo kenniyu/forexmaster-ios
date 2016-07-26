@@ -12,6 +12,7 @@ public struct FirebaseAnalytics {
     public struct EventKeys {
         public static let kPositionsScreenPageView = "positions_screen_pv"
         public static let kHistoryScreenPageView = "history_screen_pv"
+        public static let kNotificationScreenPageView = "notification_screen_pv"
         public static let kPerformanceScreenPageView = "performance_screen_pv"
         public static let kOpenedAppThroughPushNotification = "app_opened_via_push_notification"
         public static let kReceivedPushNotification = "app_received_push_notification"

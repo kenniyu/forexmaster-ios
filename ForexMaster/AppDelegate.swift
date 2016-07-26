@@ -48,12 +48,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         positionsNavigationViewController.tabBarItem.image = UIImage(named: "portfolio.png")
         positionsNavigationViewController.title = "Portfolio"
         
+        let notificationViewController = NotificationViewController(nibName: "NotificationViewController", bundle: nil)
+        let notificationNavigationViewController = UINavigationController(rootViewController: notificationViewController)
+        notificationNavigationViewController.tabBarItem.image = UIImage(named: "message.png")
+        notificationNavigationViewController.title = "Messages"
+        
         let historyViewController = HistoryViewController(nibName: "HistoryViewController", bundle: nil)
         let historyNavigationViewController = UINavigationController(rootViewController: historyViewController)
         historyNavigationViewController.tabBarItem.image = UIImage(named: "history.png")
         historyNavigationViewController.title = "History"
         
-        let tabBarControllers = [accountSummaryNavigationViewController, positionsNavigationViewController, historyNavigationViewController]
+        let tabBarControllers = [accountSummaryNavigationViewController, positionsNavigationViewController, notificationNavigationViewController, historyNavigationViewController]
         
         let mainTabBarController = MainTabBarController()
         mainTabBarController.viewControllers = tabBarControllers

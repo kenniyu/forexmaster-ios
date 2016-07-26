@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationViewController" customModule="ForexMaster" customModuleProvider="target">
+            <connections>
+                <outlet property="adBannerTopConstraint" destination="Ril-Y0-7zS" id="Mff-eG-BZ1"/>
+                <outlet property="bannerView" destination="4ms-Zo-2gr" id="vnq-V7-8Ix"/>
+                <outlet property="spinner" destination="qA8-Tb-MpG" id="CZM-CS-2rf"/>
+                <outlet property="tableView" destination="uf5-39-Xx0" id="Bku-tX-MIb"/>
+                <outlet property="tableViewTopConstraint" destination="KGj-hb-byi" id="KJG-MB-mHL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-39-Xx0">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wTC-PM-Wkn"/>
+                        <outlet property="delegate" destination="-1" id="ufL-N3-rUO"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ms-Zo-2gr" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0Yj-Cg-biY"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qA8-Tb-MpG">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="uf5-39-Xx0" secondAttribute="bottom" id="3iE-x9-0kZ"/>
+                <constraint firstItem="uf5-39-Xx0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B0I-Of-7vH"/>
+                <constraint firstAttribute="trailing" secondItem="4ms-Zo-2gr" secondAttribute="trailing" id="CZo-Zn-GDp"/>
+                <constraint firstItem="uf5-39-Xx0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KGj-hb-byi"/>
+                <constraint firstItem="qA8-Tb-MpG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="RGA-OY-qSE"/>
+                <constraint firstItem="4ms-Zo-2gr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ril-Y0-7zS"/>
+                <constraint firstItem="4ms-Zo-2gr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZFz-Ml-JC5"/>
+                <constraint firstAttribute="trailing" secondItem="uf5-39-Xx0" secondAttribute="trailing" id="fI5-Bf-OCY"/>
+                <constraint firstItem="qA8-Tb-MpG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vt9-Wa-QbH"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
