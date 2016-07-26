@@ -25,6 +25,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ut6-hh-j1z">
                                 <rect key="frame" x="280" y="24" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggledSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="g2Z-IS-X2U"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

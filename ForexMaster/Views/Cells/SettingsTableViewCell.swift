@@ -67,7 +67,17 @@ public class SettingsTableViewCell: UITableViewCell {
         contentView.backgroundColor = backgroundColor
         containerView.backgroundColor = Styles.Colors.LighterGray
         
+        switchControl.onTintColor = Styles.Colors.Green
         titleLabel.font = Styles.Fonts.avenirRegularFontWithSize(16)
         titleLabel.textColor = Styles.Colors.Black
+    }
+    
+    @IBAction func toggledSwitch(sender: UISwitch) {
+        let isOn = sender.on
+        if isOn {
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        } else {
+            UIApplication.sharedApplication().unregisterForRemoteNotifications()
+        }
     }
 }

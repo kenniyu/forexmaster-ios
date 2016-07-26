@@ -51,14 +51,14 @@ public class SettingsViewController: BaseViewController {
         
         FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kSettingsScreenPageView, parameters: [
             "env": EnvironmentManager.sharedInstance.configuration
-            ])
+        ])
+        updateCellModels()
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         registerCells()
-        updateCellModels()
     }
     
     public func registerCells() {
@@ -75,13 +75,13 @@ public class SettingsViewController: BaseViewController {
         
         var userSectionRows: [SettingsTableViewCellModel] = []
         
-        let allowNotifications = NSUserDefaults.standardUserDefaults().boolForKey("allowNotifications")
+        let allowNotifications = UIApplication.sharedApplication().isRegisteredForRemoteNotifications()
         let notificationsRow = SettingsTableViewCellModel(title: "Trade Notifications", switchValue: allowNotifications)
         userSectionRows.append(notificationsRow)
         
         cellModels = [
-            basicSectionRows
-//            userSectionRows
+            basicSectionRows,
+            userSectionRows
         ]
         
         // filter
