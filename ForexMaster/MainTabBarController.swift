@@ -15,6 +15,7 @@ public class MainTabBarController: UITabBarController {
         self.tabBar.tintColor = Styles.Colors.Green
         self.tabBar.barTintColor = Styles.Colors.White
         
+        
         let appearance = UITabBarItem.appearance()
         if let font: UIFont = MainTabBarController.kTabBarControllerFont {
             let selectedAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: Styles.Colors.Green]

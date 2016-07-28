@@ -68,6 +68,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainTabBarController = MainTabBarController()
         mainTabBarController.viewControllers = tabBarControllers
         
+//        if let viewControllers = mainTabBarController.viewControllers {
+//            for viewController in viewControllers {
+//                viewController.tabBarItem.imageInsets = UIEdgeInsetsMake(1, 1, 1, 1)
+//            }
+//        }
+        
         return mainTabBarController
     }
     
@@ -161,8 +167,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set push token
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "pushToken")
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "allowNotifications")
-        
         FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kRegisteredForPushNotification, parameters: nil)
         
         let baseUrl = NetworkManager.sharedInstance.baseUrl

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ForexMaster/AppDelegate.swift"
-            timestampString = "491242690.099621"
+            timestampString = "491264580.292535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -32,70 +32,6 @@
             startingLineNumber = "126"
             endingLineNumber = "126"
             landmarkName = "tappedPairButton(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
-            timestampString = "491247516.284835"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "tappedSegmentControl(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ForexMaster.PerformanceChartTableViewCell.tappedSegmentControl (__ObjC.UISegmentedControl) -&gt; ()"
-                  moduleName = "ForexMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
-                  timestampString = "491247890.101977"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194"
-                  offsetFromSymbolStart = "114">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "@objc ForexMaster.PerformanceChartTableViewCell.tappedSegmentControl (__ObjC.UISegmentedControl) -&gt; ()"
-                  moduleName = "ForexMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ken/Documents/iOS%20Apps/ForexMaster/ForexMaster/Views/Cells/PerformanceChartTableViewCell.swift"
-                  timestampString = "491247890.102129"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194"
-                  offsetFromSymbolStart = "133">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ForexMaster/Views/Cells/MessageTableViewCell.swift"
-            timestampString = "491202079.833952"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "size(_:viewModel:constrainedWidthAdjustment:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

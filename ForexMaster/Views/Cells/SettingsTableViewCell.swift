@@ -55,16 +55,17 @@ public class SettingsTableViewCell: UITableViewCell {
         if let switchValue = viewModel.switchValue {
             switchControl.hidden = false
             switchControl.on = switchValue
+            selectionStyle = .None
         } else {
+            selectionStyle = .Default
             switchControl.hidden = true
+            accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
     }
     
     public func setupStyles() {
-        selectionStyle = .None
-        
-        backgroundColor = UIColor.clearColor()
-        contentView.backgroundColor = backgroundColor
+        backgroundColor = Styles.Colors.LighterGray
+        contentView.backgroundColor = Styles.Colors.LighterGray
         containerView.backgroundColor = Styles.Colors.LighterGray
         
         switchControl.onTintColor = Styles.Colors.Green
