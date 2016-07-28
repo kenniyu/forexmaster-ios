@@ -94,7 +94,7 @@ public class PerformanceChartTableViewCell: UITableViewCell {
         var cumulativeProfits: Double = 0
         
         var yData: [Double] = []
-        let initialProfits: Double = 1000
+        let initialProfits: Double = viewModel.performance.initialBalance
         
         for trade in trades {
             cumulativeProfits += trade.profit

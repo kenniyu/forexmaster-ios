@@ -142,7 +142,7 @@ public class PerformanceChart: UIView {
             cumulativeProfits.append(totalProfit)
         }
         
-        let initialAccountBalance: Double = 1000
+        let initialAccountBalance: Double = performance.initialBalance
         
         var points: [CGPoint] = []
         
