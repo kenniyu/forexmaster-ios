@@ -87,6 +87,11 @@ public class SettingsViewController: BaseViewController {
         // filter
         tableView.reloadData()
     }
+    
+    public func showLegal() {
+        let legalViewController = LegalViewController(url: LegalViewController.kUrl)
+        navigationController?.pushViewController(legalViewController, animated: true)
+    }
 }
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -150,8 +155,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case SettingsSections.Basic.rawValue:
             switch indexPath.row {
             case BasicSectionRows.Legal.rawValue:
-                let legalViewController = LegalViewController(url: LegalViewController.kUrl)
-                navigationController?.pushViewController(legalViewController, animated: true)
+                showLegal()
             default:
                 break
             }

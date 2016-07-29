@@ -57,6 +57,9 @@ public class LegalViewController: BaseViewController {
         guard let url = NSURL(string: urlStr) else { return }
         let request = NSURLRequest(URL: url)
         webView.loadRequest(request)
+        
+        // acknowledge it
+        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: UserDefaultKeys.kLastAckedLegal)
     }
 }
 

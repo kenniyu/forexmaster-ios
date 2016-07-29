@@ -10,6 +10,13 @@ import UIKit
 import Firebase
 import Alamofire
 
+
+public struct UserDefaultKeys {
+    static let kPushHint = "pushHint"
+    static let kPushToken = "pushToken"
+    static let kLastAckedLegal = "lastAckedLegal"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -31,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let _ = launchOptions {
             FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kOpenedAppThroughPushNotification, parameters: nil)
         }
+        
+        checkLegal()
         
         return true
     }
@@ -67,12 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainTabBarController = MainTabBarController()
         mainTabBarController.viewControllers = tabBarControllers
-        
-//        if let viewControllers = mainTabBarController.viewControllers {
-//            for viewController in viewControllers {
-//                viewController.tabBarItem.imageInsets = UIEdgeInsetsMake(1, 1, 1, 1)
-//            }
-//        }
         
         return mainTabBarController
     }
@@ -120,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         application.applicationIconBadgeNumber = 0
-        if let pushToken = NSUserDefaults.standardUserDefaults().objectForKey("pushToken") as? String {
+        if let pushToken = NSUserDefaults.standardUserDefaults().objectForKey(UserDefaultKeys.kPushToken) as? String {
             let baseUrl = NetworkManager.sharedInstance.baseUrl
             let url = "\(baseUrl)/clear_badge_count/\(pushToken).json"
             
@@ -131,6 +134,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kAppEnteredForeground, parameters: nil)
+        
+        checkLegal()
+    }
+    
+    func checkLegal() {
+        if let lastViewedLegal = NSUserDefaults.standardUserDefaults().objectForKey(UserDefaultKeys.kLastAckedLegal) as? NSDate {
+            let weekTimeInterval: NSTimeInterval = 24 * 60 * 60 * 30
+            if lastViewedLegal.timeIntervalSince1970 + weekTimeInterval < NSDate().timeIntervalSince1970 {
+                // show alert controller
+                showLegalDisclaimerAlert()
+            }
+        } else {
+            showLegalDisclaimerAlert()
+        }
+    }
+    
+    func showLegalDisclaimerAlert() {
+        guard let topViewController = AppDelegate.topMostViewController() else { return }
+
+        let viewAction = UIAlertAction(title: "View", style: .Default) { (action: UIAlertAction) in
+            guard let topViewController = topViewController as? MainTabBarController else { return }
+            let tabBar = topViewController.tabBar
+            if let items = tabBar.items {
+                topViewController.selectedIndex = items.count - 1
+                guard let navigationController = topViewController.selectedViewController as? UINavigationController else { return }
+                guard let settingsViewController = navigationController.viewControllers.first as? SettingsViewController else { return }
+                settingsViewController.showLegal()
+            }
+        }
+        
+        let alertController = UIAlertController(title: "Legal Disclaimer", message: "In order to use Forex Bot, please view the Legal Disclaimer.", preferredStyle: .Alert)
+        alertController.addAction(viewAction)
+        
+        topViewController.presentViewController(alertController, animated: true, completion: nil)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -184,6 +221,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         FIRAnalytics.logEventWithName(FirebaseAnalytics.EventKeys.kReceivedPushNotification, parameters: nil)
+    }
+    
+    class func topMostViewController() -> UIViewController? {
+        var presentedViewController = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while let viewController = presentedViewController?.presentedViewController {
+            presentedViewController = viewController
+        }
+        
+        if presentedViewController == nil {
+        }
+        return presentedViewController
     }
 }
 

@@ -41,7 +41,7 @@ public class PositionsViewController: BaseViewController {
     
     public override var navBarTitle: String {
         get {
-            return "Positions"
+            return "Portfolio"
         }
     }
     
@@ -58,6 +58,24 @@ public class PositionsViewController: BaseViewController {
         ])
         fetchTrades()
         fetchQuotes()
+    }
+    
+    public override func setup() {
+        super.setup()
+        
+        requestPushNotificationAccess()
+    }
+    
+    public func requestPushNotificationAccess() {
+        let hasViewedPushNotificationHint = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaultKeys.kPushHint)
+        if !hasViewedPushNotificationHint {
+            let viewController = PushNotificationViewController()
+            viewController.pushNotificationViewControllerDelegate = self
+            viewController.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            viewController.modalPresentationStyle = .OverCurrentContext
+            viewController.modalTransitionStyle = .CrossDissolve
+            tabBarController?.presentViewController(viewController, animated: true, completion: nil)
+        }
     }
     
     public func setupAd() {
@@ -280,5 +298,17 @@ extension PositionsViewController: PositionSectionHeaderViewDelegate {
         self.sortDirection = sortDirection
         sortPositions()
         tableView.reloadData()
+    }
+}
+
+extension PositionsViewController: PushNotificationViewControllerDelegate {
+    public func didConfirmPushNotifications() {
+        // Push notifications
+        AppDelegate.registerForPushNotifications(UIApplication.sharedApplication())
+        NSUserDefaults.standardUserDefaults().setObject(true, forKey: UserDefaultKeys.kPushHint)
+    }
+    
+    public func didRejectPushNotifications() {
+        NSUserDefaults.standardUserDefaults().setObject(true, forKey: UserDefaultKeys.kPushHint)
     }
 }

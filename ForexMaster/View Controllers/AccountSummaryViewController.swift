@@ -38,20 +38,6 @@ public class AccountSummaryViewController: BaseViewController {
         registerCells()
         
         setupTableView()
-        
-        requestPushNotificationAccess()
-    }
-    
-    public func requestPushNotificationAccess() {
-        let hasViewedPushNotificationHint = NSUserDefaults.standardUserDefaults().boolForKey("pushHint")
-        if !hasViewedPushNotificationHint {
-            let viewController = PushNotificationViewController()
-            viewController.pushNotificationViewControllerDelegate = self
-            viewController.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-            viewController.modalPresentationStyle = .OverCurrentContext
-            viewController.modalTransitionStyle = .CrossDissolve
-            tabBarController?.presentViewController(viewController, animated: true, completion: nil)
-        }
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -203,17 +189,5 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
             return 0
         }
         return BaseTableViewHeaderFooterView.kFooterHeight
-    }
-}
-
-extension AccountSummaryViewController: PushNotificationViewControllerDelegate {
-    public func didConfirmPushNotifications() {
-        // Push notifications
-        AppDelegate.registerForPushNotifications(UIApplication.sharedApplication())
-        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "pushHint")
-    }
-    
-    public func didRejectPushNotifications() {
-        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "pushHint")
     }
 }
